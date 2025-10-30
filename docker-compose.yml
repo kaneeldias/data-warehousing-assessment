@@ -20,7 +20,6 @@ services:
       retries: 10
       start_period: 30s
 
-
 volumes:
   mssql-data:
     driver: local
