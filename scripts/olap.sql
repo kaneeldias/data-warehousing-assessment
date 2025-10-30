@@ -1,8 +1,8 @@
-USE master;
-GO
-
-DROP DATABASE IF EXISTS [olap];
-GO
+-- USE master;
+-- GO
+--
+-- DROP DATABASE IF EXISTS [olap];
+-- GO
 
 CREATE DATABASE olap;
 GO

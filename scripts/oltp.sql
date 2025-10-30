@@ -1,8 +1,8 @@
-USE master;
-GO
-
-DROP DATABASE IF EXISTS oltp;
-GO
+-- USE master;
+-- GO
+--
+-- DROP DATABASE IF EXISTS oltp;
+-- GO
 
 CREATE DATABASE oltp;
 GO
