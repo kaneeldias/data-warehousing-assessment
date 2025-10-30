@@ -1,7 +1,7 @@
 USE master;
 GO
 
-DROP DATABASE IF EXISTS olap;
+DROP DATABASE IF EXISTS [olap];
 GO
 
 CREATE DATABASE olap;
@@ -74,5 +74,9 @@ CREATE TABLE Fact_Delivery(
     was_delivered BIT,
     was_rejected BIT,
     delay_days TINYINT
+
+    CONSTRAINT FK_FactDelivery_DimVendor FOREIGN KEY (vendor_id) REFERENCES Dim_Vendor (vendor_id),
+    CONSTRAINT FK_FactDelivery_ScheduledDate FOREIGN KEY (scheduled_date_id) REFERENCES Dim_Date (date_id),
+    CONSTRAINT FK_FactDelivery_DeliveredDate FOREIGN KEY (delivered_date_id) REFERENCES Dim_Date (date_id)
 )
 GO
