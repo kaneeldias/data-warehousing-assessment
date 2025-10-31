@@ -11,7 +11,7 @@ USE olap;
 GO
 
 CREATE TABLE Dim_Product(
-    category_id INT PRIMARY KEY,
+    product_id INT PRIMARY KEY,
     name VARCHAR(100),
     category VARCHAR(100)
 )
@@ -58,7 +58,7 @@ CREATE TABLE Fact_OrderItem(
     deviation_from_contract_price AS (unit_price - contract_price),
     ordered_date_id INT,
 
-    CONSTRAINT FK_FactOrderItem_DimProduct FOREIGN KEY (product_id) REFERENCES Dim_Product (category_id),
+    CONSTRAINT FK_FactOrderItem_DimProduct FOREIGN KEY (product_id) REFERENCES Dim_Product (product_id),
     CONSTRAINT FK_FactOrderItem_DimVendor FOREIGN KEY (vendor_id) REFERENCES Dim_Vendor (vendor_id),
     CONSTRAINT FK_FactOrderItem_DimBranch FOREIGN KEY (branch_id) REFERENCES Dim_Branch (branch_id),
     CONSTRAINT FK_FactOrderItem_DimEmployee FOREIGN KEY (employee_id) REFERENCES Dim_Employee (employee_id),

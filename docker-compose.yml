@@ -6,6 +6,7 @@ services:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "Test@123"
       MSSQL_PID: "Developer"
+      MSSQL_AGENT_ENABLED: "true"
     ports:
       - "1433:1433"
     volumes:
@@ -27,14 +28,15 @@ services:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "Test@123"
     volumes:
-      - ./scripts:/usr/config:ro
+      - ./init-scripts:/usr/config:ro
     entrypoint: ["/bin/bash", "-lc"]
     command:
       - |
         until /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -Q "SELECT 1" >/dev/null 2>&1; do echo "waiting for mssql-server..."; sleep 2; done; \
         echo "running init scripts"; \
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/oltp.sql; \
-        /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/olap.sql
+        /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/olap.sql; \
+        /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/enable_cdc.sql; \
     restart: "no"
 
 volumes:
