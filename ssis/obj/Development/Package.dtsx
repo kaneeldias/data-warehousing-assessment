@@ -1,0 +1,3468 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/4/2025 12:14:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-N0CSB19"
+  DTS:CreatorName="DESKTOP-N0CSB19\User"
+  DTS:DTSID="{C60F660E-BA96-4172-93F0-7E27BC0596FF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{97311B97-3193-436D-B3BA-B6BAF90A2662}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{25BBFB9C-2588-4393-B1B8-9D68CA455BAA}"
+      DTS:ObjectName="127.0.0.1,1433.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=127.0.0.1,1433;User ID=sa;Initial Catalog=olap;Provider=MSOLEDBSQL19.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{25BBFB9C-2588-4393-B1B8-9D68CA455BAA}127.0.0.1,1433.sa;Trust Server Certificate=True;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABMJ89IFaaqIO0vy3dAiSSyr4vjFGvJ9YPSLHxzgyxWLAAAAAAOgAAAAAIAACAAAAAqwL+qZKa0YWrUaO52LgYaa1KFvbRHKyEKFSQ7ISIBWyAAAABRs3PGCkeaPoz8zngtPy8OAq0HQUIB6PN9yBFM62yT4UAAAADe4t5dikbdLeg2HiEMe52dnRPGpe3PVhrMNxZ5pmxiA+NvyXtsrpqEDGTN3E2Y9HHm2Mm0cCZBGiIGcQ/jiyNi</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dim Employees File Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4C458AD7-AAA3-4C59-B668-AA0BB37EDC19}"
+      DTS:ObjectName="Dim Employees File Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-assessment\data\data - Dim_Employee.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="employee_id"
+              DTS:DTSID="{2FEDF782-9048-407F-B808-656FBBE7395E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{64CB91F1-38F4-4E48-A1B4-F5A18BB15DAF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dim_Branch FIle Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F23EF33B-6461-49A7-A812-3BD45CC5E253}"
+      DTS:ObjectName="Dim_Branch FIle Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-assessment\data\data - Dim_Branch.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="branch_id"
+              DTS:DTSID="{77ACD936-FCC4-4A2D-B7F5-77B90BCE07DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{5D581C18-7983-440A-827D-930A9439BFD0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dim_Date File Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E2BE5DC9-89F1-44F7-B2FA-011A43FD76FB}"
+      DTS:ObjectName="Dim_Date File Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-assessment\data\data - Dim_Date.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_id"
+              DTS:DTSID="{1967E874-A548-4BD2-9489-1E4836D76818}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{E66188D3-DCFF-4660-943F-E6DC7BB67459}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="month"
+              DTS:DTSID="{84D2D5B3-7731-4334-813D-91118A6B3308}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quarter"
+              DTS:DTSID="{E571FEC4-C63D-4BEE-8032-F03B462878F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="day"
+              DTS:DTSID="{BAEBBB85-93AF-4AFF-866A-1F673C628057}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dim_Product CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{75CA9FF7-4606-450A-8C9C-1D4C8E5F36FF}"
+      DTS:ObjectName="Dim_Product CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-assessment\data\data - Dim_Product.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_id"
+              DTS:DTSID="{94D5D337-A5FF-4AF8-A1B0-37D26901D4D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{6408B12A-6AC3-49BE-B2E5-9DE9C0117C15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category"
+              DTS:DTSID="{E15418F3-E43C-4551-BFD9-2B7ADFD5D327}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dim_Vendor CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E6B027F1-5C4B-45AC-8216-39B1F79EFF12}"
+      DTS:ObjectName="Dim_Vendor CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-assessment\data\data - Dim_Vendor.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vendor_id"
+              DTS:DTSID="{6F731289-9555-4A31-874F-304B7EFDF318}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{7AF2BF0E-7A06-4B5B-9685-45849BC23C6E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="is_approved"
+              DTS:DTSID="{D54B3331-D0D7-4EE2-BC28-F6B57E634757}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Fact_Delivery CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0829903C-50A7-4586-873F-9E260C988875}"
+      DTS:ObjectName="Fact_Delivery CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-assessment\data\data - Fact_Delivery.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="delivery_id"
+              DTS:DTSID="{04B119D9-5AC0-4DE0-8809-00300DC4C027}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vendor_id"
+              DTS:DTSID="{1CFE970F-D35F-419D-AADB-D615E2A87842}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="scheduled_date_id"
+              DTS:DTSID="{D4CB3391-05AF-4E65-8A14-1B0DCD7E8D9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="delivered_date_id"
+              DTS:DTSID="{7CBC5787-90C8-4172-8C5B-74FDDBB33B37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="was_delivered"
+              DTS:DTSID="{EC977073-E48F-4C50-A896-E5075C375ED1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="was_rejected"
+              DTS:DTSID="{C67ED2B8-1123-4F8A-B2E0-54236944535E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="delay_days"
+              DTS:DTSID="{EA7D8988-FF28-4109-A6C4-8440D858E6A5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Fact_OrderItem File Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A647120D-5955-4DD5-9F36-5C29DD16E8C8}"
+      DTS:ObjectName="Fact_OrderItem File Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-assessment\data\data - Fact_OrderItem.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_item_id"
+              DTS:DTSID="{D7328B20-D65E-48CA-94DD-AC8ABBA2E994}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_id"
+              DTS:DTSID="{8A4091FB-1C6D-4171-8D31-A126BC99EB4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vendor_id"
+              DTS:DTSID="{BE83D519-524D-4BD0-BB3D-6D6A34752BA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="branch_id"
+              DTS:DTSID="{CC388F8F-0304-40D2-B308-1E5D8A512491}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="employee_id"
+              DTS:DTSID="{C0B06918-608F-4E6B-AE02-7930D9752656}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="unit_price"
+              DTS:DTSID="{433FC0AC-14CD-4988-A2A9-AD046DDDEEA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quantity"
+              DTS:DTSID="{5AD2995F-50EB-4493-B6E3-28494E477B86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contract_price"
+              DTS:DTSID="{1C08E914-D1B9-467C-9264-0B40A5DF5A33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ordered_date_id"
+              DTS:DTSID="{FE07AF5F-4FD4-4918-8309-D357EC0A5893}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E4E22266-7BA7-4FF1-A918-810141C2D44A}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Downloads\data - Sheet1.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category_id"
+              DTS:DTSID="{55AC0250-5914-455C-A388-BC21C018BAF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{530513C1-292A-418E-8B99-233D94BC0744}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[log.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A66DE78D-7309-412B-B944-9B39FDE242FB}"
+      DTS:ObjectName="log.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="log.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[log.txt 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{9A2663B2-4912-4D74-997A-30074966C34C}"
+      DTS:ObjectName="log.txt 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-ssis\Data Warehousing SSIS\log.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="log.txt 1"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{304C3CE0-0ECD-40BE-86A0-CA0AE3F43BF4}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{304C3CE0-0ECD-40BE-86A0-CA0AE3F43BF4}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Populate Dimensional Tables"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{246D212E-62F5-4258-974F-3C73810B2F55}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Dimensional Tables"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Branch CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Dim_Branch CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Dim_Branch FIle Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Dim_Branch FIle Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].Columns[branch_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].ExternalColumns[branch_id]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].Columns[branch_id]"
+                      name="branch_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].ExternalColumns[branch_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="branch_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Branch Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Branch Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Branch]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Branch Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input].Columns[branch_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="branch_id"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input].ExternalColumns[branch_id]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output].Columns[branch_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input].ExternalColumns[branch_id]"
+                      dataType="i4"
+                      name="branch_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Branch Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Branch Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Branch Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Date CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Dim_Date CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Date CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Dim_Date File Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Dim_Date File Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[date_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[date_id]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[date_id]"
+                      name="date_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[year]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[month]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[month]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[month]"
+                      name="month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[quarter]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[quarter]"
+                      name="quarter"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[day]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[day]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[day]"
+                      name="day"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[date_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="date_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[month]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="quarter" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].ExternalColumns[day]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="day" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Date Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Date Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Date Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].Columns[date_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="date_id"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[date_id]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].Columns[year]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].Columns[month]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="month"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[month]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[month]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].Columns[quarter]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="quarter"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[quarter]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[quarter]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].Columns[day]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="day"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[day]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output].Columns[day]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                      dataType="i4"
+                      name="date_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                      dataType="i2"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[quarter]"
+                      dataType="ui1"
+                      name="quarter" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[month]"
+                      dataType="ui1"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input].ExternalColumns[day]"
+                      dataType="ui1"
+                      name="day" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Date Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Date Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Date Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Employee CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Dim_Employee CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Dim Employees File Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Dim Employees File Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].Columns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].ExternalColumns[employee_id]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].ExternalColumns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Employee Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Employee Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Employee Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input].Columns[employee_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="employee_id"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].Columns[employee_id]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output].Columns[name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Employee Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Employee Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Employee Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Product CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Dim_Product CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Product CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Dim_Product CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Dim_Product CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[product_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].ExternalColumns[product_id]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[category]"
+                      name="category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].ExternalColumns[product_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="category" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Product Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Product Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Product Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].Columns[category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="category"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output].Columns[category]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="category" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Product Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Product Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Product Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Vendor CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Dim_Vendor CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Dim_Vendor CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Dim_Vendor CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[vendor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].ExternalColumns[vendor_id]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[vendor_id]"
+                      name="vendor_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[is_approved]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].ExternalColumns[is_approved]"
+                      length="50"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[is_approved]"
+                      name="is_approved"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].ExternalColumns[vendor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].ExternalColumns[is_approved]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="is_approved" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimensional Tables\Dim_Vendor Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Vendor Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Vendor]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].Columns[vendor_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="vendor_id"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].ExternalColumns[vendor_id]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[vendor_id]" />
+                    <inputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].Columns[is_approved]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="is_approved"
+                      externalMetadataColumnId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].ExternalColumns[is_approved]"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output].Columns[is_approved]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].ExternalColumns[vendor_id]"
+                      dataType="i4"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input].ExternalColumns[is_approved]"
+                      dataType="bool"
+                      name="is_approved" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimensional Tables\Dim_Vendor Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimensional Tables\Dim_Vendor Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate Dimensional Tables.Paths[Flat File Source Output]"
+              endId="Package\Populate Dimensional Tables\Dim_Branch Table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate Dimensional Tables\Dim_Branch CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Populate Dimensional Tables.Paths[Flat File Source Output1]"
+              endId="Package\Populate Dimensional Tables\Dim_Date Table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate Dimensional Tables\Dim_Date CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Populate Dimensional Tables.Paths[Flat File Source Output2]"
+              endId="Package\Populate Dimensional Tables\Dim_Employee Table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate Dimensional Tables\Dim_Employee CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Populate Dimensional Tables.Paths[Flat File Source Output3]"
+              endId="Package\Populate Dimensional Tables\Dim_Product Table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate Dimensional Tables\Dim_Product CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Populate Dimensional Tables.Paths[Flat File Source Output4]"
+              endId="Package\Populate Dimensional Tables\Dim_Vendor Table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate Dimensional Tables\Dim_Vendor CSV.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Fact Tables"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3873B813-A607-445D-87B8-D3CB2695A134}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Fact Tables"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate Fact Tables\Fact_Delivery CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Fact_Delivery CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Fact Tables\Fact_Delivery CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Fact_Delivery CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Fact_Delivery CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[vendor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[vendor_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[vendor_id]"
+                      name="vendor_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delivery_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[delivery_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delivery_id]"
+                      name="delivery_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[scheduled_date_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[scheduled_date_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[scheduled_date_id]"
+                      name="scheduled_date_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delivered_date_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[delivered_date_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delivered_date_id]"
+                      name="delivered_date_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[was_delivered]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[was_delivered]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[was_delivered]"
+                      name="was_delivered"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[was_rejected]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[was_rejected]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[was_rejected]"
+                      name="was_rejected"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delay_days]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[delay_days]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delay_days]"
+                      name="delay_days"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[vendor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[delivery_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="delivery_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[scheduled_date_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="scheduled_date_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[delivered_date_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="delivered_date_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[was_delivered]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="was_delivered" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[was_rejected]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="was_rejected" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].ExternalColumns[delay_days]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="delay_days" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Fact Tables\Fact_Delivery Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Fact_Delivery Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_Delivery]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Fact Tables\Fact_Delivery Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].Columns[vendor_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="vendor_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[vendor_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[vendor_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].Columns[delivery_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="delivery_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[delivery_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delivery_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].Columns[scheduled_date_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="scheduled_date_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[scheduled_date_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[scheduled_date_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].Columns[delivered_date_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="delivered_date_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[delivered_date_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delivered_date_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].Columns[was_delivered]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="was_delivered"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[was_delivered]"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[was_delivered]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].Columns[was_rejected]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="was_rejected"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[was_rejected]"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[was_rejected]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].Columns[delay_days]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="delay_days"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[delay_days]"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output].Columns[delay_days]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[vendor_id]"
+                      dataType="i4"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[delivery_id]"
+                      dataType="i4"
+                      name="delivery_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[scheduled_date_id]"
+                      dataType="i4"
+                      name="scheduled_date_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[delivered_date_id]"
+                      dataType="i4"
+                      name="delivered_date_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[was_delivered]"
+                      dataType="bool"
+                      name="was_delivered" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[was_rejected]"
+                      dataType="bool"
+                      name="was_rejected" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input].ExternalColumns[delay_days]"
+                      dataType="i2"
+                      name="delay_days" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Fact Tables\Fact_Delivery Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_Delivery Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Fact Tables\Fact_Delivery Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Fact Tables\Fact_OrderItem CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Fact_OrderItem CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Fact_OrderItem File Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Fact_OrderItem File Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[vendor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[vendor_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[vendor_id]"
+                      name="vendor_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[order_item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[order_item_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[order_item_id]"
+                      name="order_item_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[product_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[product_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[branch_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[branch_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[branch_id]"
+                      name="branch_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[employee_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[unit_price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[unit_price]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[unit_price]"
+                      name="unit_price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[quantity]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[ordered_date_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[ordered_date_id]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[ordered_date_id]"
+                      name="ordered_date_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[contract_price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[contract_price]"
+                      length="50"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[contract_price]"
+                      name="contract_price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[vendor_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[order_item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_item_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[product_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[branch_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="branch_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[unit_price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="unit_price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[total_price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[contract_price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="contract_price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[deviation_from_contract_price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="deviation_from_contract_price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].ExternalColumns[ordered_date_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ordered_date_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Fact Tables\Fact_OrderItem Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Fact_OrderItem Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_OrderItem]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Fact Tables\Fact_OrderItem Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[vendor_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="vendor_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[vendor_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[vendor_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[order_item_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_item_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[order_item_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[order_item_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[branch_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="branch_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[branch_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[branch_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[employee_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="employee_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[employee_id]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[unit_price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="unit_price"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[unit_price]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[unit_price]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="quantity"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[contract_price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="contract_price"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[contract_price]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[contract_price]" />
+                    <inputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].Columns[ordered_date_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ordered_date_id"
+                      externalMetadataColumnId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[ordered_date_id]"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output].Columns[ordered_date_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[vendor_id]"
+                      dataType="i4"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[order_item_id]"
+                      dataType="i4"
+                      name="order_item_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[branch_id]"
+                      dataType="i4"
+                      name="branch_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[unit_price]"
+                      dataType="numeric"
+                      name="unit_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[total_price]"
+                      dataType="numeric"
+                      name="total_price"
+                      precision="21"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[contract_price]"
+                      dataType="numeric"
+                      name="contract_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input].ExternalColumns[ordered_date_id]"
+                      dataType="i4"
+                      name="ordered_date_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Fact Tables\Fact_OrderItem Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Fact Tables\Fact_OrderItem Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Fact Tables\Fact_OrderItem Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate Fact Tables.Paths[Flat File Source Output]"
+              endId="Package\Populate Fact Tables\Fact_Delivery Table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate Fact Tables\Fact_Delivery CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Populate Fact Tables.Paths[Flat File Source Output1]"
+              endId="Package\Populate Fact Tables\Fact_OrderItem Table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate Fact Tables\Fact_OrderItem CSV.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7C5C9DED-9B73-4E97-A0FE-8B013429AA33}"
+      DTS:From="Package\Populate Dimensional Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Populate Fact Tables" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="218.666666666667,42.6666666666667"
+          Id="Package\Populate Dimensional Tables"
+          TopLeft="234.374989522621,220.999997573464" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Populate Fact Tables"
+          TopLeft="250.62498879619,355.789469777712" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="342.166655826072,263.66666424013">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92.1228055375821"
+              Start="0,0"
+              End="0,84.6228055375821">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.6228055375821" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Populate Dimensional Tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Product CSV"
+          TopLeft="963.124956944959,93.0526305572479" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Vendor Table"
+          TopLeft="403.124981978909,548.543854277688" />
+        <NodeLayout
+          Size="177.333333333334,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Employee CSV"
+          TopLeft="731.874967282639,91.6842095196413" />
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Product Table"
+          TopLeft="968.749959375711,258.421050452955" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Vendor CSV"
+          TopLeft="408.749979045243,382.473680011041" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Date CSV"
+          TopLeft="509.374974546955,93.7368410760512" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Date Table"
+          TopLeft="509.999977201224,259.789471490562" />
+        <NodeLayout
+          Size="162.666666666667,42"
+          Id="Package\Populate Dimensional Tables\Dim_Branch CSV"
+          TopLeft="299.249986868352,95.7982446298981" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Branch Table"
+          TopLeft="293.624989802018,261.868418896545" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\Populate Dimensional Tables\Dim_Employee Table"
+          TopLeft="737.499969713391,257.052629415349" />
+        <EdgeLayout
+          Id="Package\Populate Dimensional Tables.Paths[Flat File Source Output4]"
+          TopLeft="488.937480512076,425.140346677708">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,123.40350759998"
+              Start="0,0"
+              End="0,115.90350759998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.90350759998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimensional Tables.Paths[Flat File Source Output3]"
+          TopLeft="1050.27079149367,135.719297223915">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,122.70175322904"
+              Start="0,0"
+              End="0,115.20175322904">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.20175322904" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimensional Tables.Paths[Flat File Source Output2]"
+          TopLeft="824.354135164681,134.350876186308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,122.701753229041"
+              Start="0,0"
+              End="0,115.201753229041">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.201753229041" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimensional Tables.Paths[Flat File Source Output1]"
+          TopLeft="587.68747587409,136.403507742718">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,123.385963747844"
+              Start="0,0"
+              End="0,115.885963747844">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.885963747844" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimensional Tables.Paths[Flat File Source Output]"
+          TopLeft="379.104155001852,137.798244629898">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,124.070174266647"
+              Start="0,0"
+              End="0,116.570174266647">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,116.570174266647" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Dimensional Tables\Dim_Vendor Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Dimensional Tables\Dim_Product Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Dimensional Tables\Dim_Date Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Dimensional Tables\Dim_Branch Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Dimensional Tables\Dim_Employee Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate Fact Tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Populate Fact Tables\Fact_Delivery CSV"
+          TopLeft="65.6249970663339,63.4210525940163" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Populate Fact Tables\Fact_Delivery Table"
+          TopLeft="60,229.491226860663" />
+        <NodeLayout
+          Size="178.666666666667,42.6666666666667"
+          Id="Package\Populate Fact Tables\Fact_OrderItem CSV"
+          TopLeft="307.499986253679,60" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\Populate Fact Tables\Fact_OrderItem Table"
+          TopLeft="303.124989131466,231.543858417074" />
+        <EdgeLayout
+          Id="Package\Populate Fact Tables.Paths[Flat File Source Output]"
+          TopLeft="148.812498533167,106.087719260683">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,123.40350759998"
+              Start="0,0"
+              End="0,115.90350759998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.90350759998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Fact Tables.Paths[Flat File Source Output1]"
+          TopLeft="395.979154359239,102.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,128.877191750407"
+              Start="0,0"
+              End="0,121.377191750407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,121.377191750407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Fact Tables\Fact_OrderItem Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Fact Tables\Fact_Delivery Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
