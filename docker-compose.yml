@@ -38,6 +38,7 @@ services:
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/olap.sql; \
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/enable_cdc.sql; \
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/manual_cdc.sql; \
+        /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/market_basket.sql; \
     restart: "no"
 
 volumes:
