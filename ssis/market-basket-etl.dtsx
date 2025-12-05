@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{1F5E8E7D-E88C-474E-A7AB-256ABE1948E6}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{2FC15580-1917-4228-8EFC-F95EC0878F91}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACcS3LPadlnC4+UlqyvzY2D/LVKpclEbUorRLpKylA/5wAAAAAOgAAAAAIAACAAAADvIjlN1J81TpHT0AkTf/IVr5FGgLX/P41UseTSFB98ciAAAAAUCSa+TYDvQzZhHuPvYirv8xmuGLRZEKnug+xtvkHRCkAAAADMx/Z+N8TaBDiudDWX5V3elo5tBP/DabMGgrIhRfe7y+9j9zIcBpFR98HROsAZ8ALMzHEbRW5GYBsPWVRlAQGN</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA0BVWWR7Jq2x+z8WS/6pZJsDWGW80OyCCrjTccgHS3gQAAAAAOgAAAAAIAACAAAADhj69MNmipvz2qCbvN+A5hVxkArQf0eWVhvFAmRlm34iAAAADd09S784xbHnJAErVDeZ8ZnZVCip/o6Jl6S1OCNI+PGUAAAADMSoNPhzxE/H0+1LJP1niSnH7ejF+V9coHPrqykRQZLa1VmjMwp69413y51Wvw3qoboPwoXn7e78ltrl/Rhp80</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -415,7 +415,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK</property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -777,6 +777,44 @@
                       </properties>
                     </outputColumn>
                   </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\ETL\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\ETL\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\ETL\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\ETL\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -2174,15 +2212,20 @@
           </components>
           <paths>
             <path
-              refId="Package\ETL.Paths[Conditional Split Default Output]"
-              endId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input]"
-              name="Conditional Split Default Output"
-              startId="Package\ETL\Filter Unique.Outputs[Conditional Split Default Output]" />
-            <path
               refId="Package\ETL.Paths[Merge Join Output]"
               endId="Package\ETL\Filter Unique.Inputs[Conditional Split Input]"
               name="Merge Join Output"
               startId="Package\ETL\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\ETL.Paths[Multicast Output 1]"
+              endId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\ETL\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\ETL.Paths[Multicast Output 2]"
+              endId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 2"
+              startId="Package\ETL\Multicast.Outputs[Multicast Output 2]" />
             <path
               refId="Package\ETL.Paths[OLE DB Source Output]"
               endId="Package\ETL\Sort 1.Inputs[Sort Input]"
@@ -2205,7 +2248,7 @@
               startId="Package\ETL\Sort 2.Outputs[Sort Output]" />
             <path
               refId="Package\ETL.Paths[Unique]"
-              endId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input]"
+              endId="Package\ETL\Multicast.Inputs[Multicast Input 1]"
               name="Unique"
               startId="Package\ETL\Filter Unique.Outputs[Unique]" />
           </paths>
@@ -2236,7 +2279,7 @@
     design-time-name="Package\ETL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="194.666666666667,42.6666666666667"
           Id="Package\ETL\OrderItems Fact Table 1"
@@ -2372,7 +2415,7 @@
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\ETL\Market Basket CSV"
-          TopLeft="203.749990891666,492.631573538371" />
+          TopLeft="230.673066611187,587.368414603442" />
         <NodeLayout
           Size="140,42.6666666666667"
           Id="Package\ETL\Filter Unique"
@@ -2399,80 +2442,104 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\ETL\Multicast"
+          TopLeft="347.115369098118,499.514165417411" />
         <EdgeLayout
           Id="Package\ETL.Paths[Unique]"
-          TopLeft="379.874985164032,452.508767429839">
+          TopLeft="404.828510464408,452.508767429839">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-90.1249942723662,40.1228061085318"
+              EndConnector="0,47.0053979875721"
               Start="0,0"
-              End="-90.1249942723662,32.6228061085318">
+              End="0,39.5053979875721">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.3211414678773" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.3211414678773"
-                    Point2="0,16.3211414678773"
-                    Point3="-4,16.3211414678773" />
-                  <mssgle:LineSegment
-                    End="-86.1249942723662,16.3211414678773" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-86.1249942723662,16.3211414678773"
-                    Point2="-90.1249942723662,16.3211414678773"
-                    Point3="-90.1249942723662,20.3211414678773" />
-                  <mssgle:LineSegment
-                    End="-90.1249942723662,32.6228061085318" />
+                    End="0,39.5053979875721" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-61.0077901049331,21.3211414678773,31.8905859375,11.3310546875"
+              BoundingBox="-15.94529296875,14.0871716500361,31.8905859375,11.3310546875"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL.Paths[Multicast Output 1]"
+          TopLeft="407.782035764785,542.180832084078">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-91.1089691535978,45.1875825193644"
+              Start="0,0"
+              End="-91.1089691535978,37.6875825193644">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5937912596822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5937912596822"
+                    Point2="0,22.5937912596822"
+                    Point3="-4,22.5937912596822" />
+                  <mssgle:LineSegment
+                    End="-87.1089691535978,22.5937912596822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-87.1089691535978,22.5937912596822"
+                    Point2="-91.1089691535978,22.5937912596822"
+                    Point3="-91.1089691535978,26.5937912596822" />
+                  <mssgle:LineSegment
+                    End="-91.1089691535978,37.6875825193644" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="177.333333333334,42.6666666666667"
           Id="Package\ETL\Market Basket Table"
-          TopLeft="431.249980721623,493.315784057174" />
+          TopLeft="466.826902208134,587.705798132069" />
         <EdgeLayout
-          Id="Package\ETL.Paths[Conditional Split Default Output]"
-          TopLeft="423.874985164032,452.508767429839">
+          Id="Package\ETL.Paths[Multicast Output 2]"
+          TopLeft="426.670924653674,542.180832084078">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.0416622242583,40.8070166273352"
+              EndConnector="128.822644221127,45.5249660479909"
               Start="0,0"
-              End="96.0416622242583,33.3070166273352">
+              End="128.822644221127,38.0249660479909">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5994643907804" />
+                    End="0,14.5654959154497" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5994643907804"
-                    Point2="0,16.5994643907804"
-                    Point3="4,16.5994643907804" />
+                    Point1="0,14.5654959154497"
+                    Point2="0,18.5654959154497"
+                    Point3="4,18.5654959154497" />
                   <mssgle:LineSegment
-                    End="92.0416622242583,16.5994643907804" />
+                    End="124.822644221127,18.5654959154497" />
                   <mssgle:CubicBezierSegment
-                    Point1="92.0416622242583,16.5994643907804"
-                    Point2="96.0416622242583,16.5994643907804"
-                    Point3="96.0416622242583,20.5994643907804" />
+                    Point1="124.822644221127,18.5654959154497"
+                    Point2="128.822644221127,18.5654959154497"
+                    Point3="128.822644221127,22.5654959154497" />
                   <mssgle:LineSegment
-                    End="96.0416622242583,33.3070166273352" />
+                    End="128.822644221127,38.0249660479909" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-22.5930751378709,21.5994643907804,141.2278125,11.658203125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
