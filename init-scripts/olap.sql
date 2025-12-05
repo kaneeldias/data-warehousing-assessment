@@ -73,7 +73,7 @@ CREATE TABLE Fact_Delivery(
     delivered_date_id INT,
     was_delivered BIT,
     was_rejected BIT,
-    delay_days TINYINT
+    delay_days SMALLINT
 
     CONSTRAINT FK_FactDelivery_DimVendor FOREIGN KEY (vendor_id) REFERENCES Dim_Vendor (vendor_id),
     CONSTRAINT FK_FactDelivery_ScheduledDate FOREIGN KEY (scheduled_date_id) REFERENCES Dim_Date (date_id),

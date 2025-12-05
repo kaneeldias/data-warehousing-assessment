@@ -1,0 +1,301 @@
+product_id,name,category
+1,Kids' Trampoline,Toys
+2,Mini Waffle Maker,Kitchen
+3,Cranberry Lime Sparkling Water,Food - Beverages
+4,Sweet Cherry Tomatoes,Food - Produce
+5,Frozen Berry Blend,Food - Frozen Foods
+6,Sliced Cucumbers,Food - Produce
+7,Peanut Butter Filled Pretzels,Food - Snacks
+8,Coconut Milk,Food - Canned Goods
+9,Coffee Subscription Service,Food
+10,Tea Infuser Bottle,Kitchen
+11,Adjustable Laptop Stand,Office
+12,Chickpea Salad Deluxe,Food - Produce
+13,Puzzle,Toys
+14,Camping Tent,Outdoor
+15,Portable Camping Stove,Outdoor
+16,Spicy Thai Coconut Soup,Food - Soups
+17,Beef Stroganoff Meal Kit,Food - Frozen Meals
+18,Leather Wallet,Accessories
+19,Foldable Picnic Table,Outdoor
+20,Honey Mustard Pretzel Bites,Food - Snacks
+21,Canvas High-Top Sneakers,Clothing - Footwear
+22,Instant Mashed Potatoes,Food - Sides
+23,Bock Beer Mustard,Food - Condiments
+24,Smoked Paprika,Food - Spices
+25,Mesh Laundry Bags Set,Home
+26,Herbal Tea Variety Pack,Food - Beverages
+27,Quinoa,Food - Grains
+28,Black Bean Soup,Food - Soups
+29,Ankle Boots,Clothing - Footwear
+30,Sweet Potato & Kale Hash,Food - Prepared Foods
+31,Coconut Chia Seed Pudding,Food - Snacks
+32,Paprika,Food - Spices
+33,Sweet Potatoes,Food - Produce
+34,Handcrafted Wooden Coasters,Home
+35,Granulated Sugar,Food - Baking
+36,Stainless Steel BBQ Grill Set,Outdoor
+37,Blue Denim Jeans,Clothing - Bottoms
+38,Coconut Cashew Yogurt,Food - Dairy Alternatives
+39,Eco-Friendly Yoga Mat,Fitness
+40,Streaming Device,Electronics
+41,Faux Leather Leggings,Clothing - Pants
+42,Zesty Cilantro Lime Dressing,Food - Condiments
+43,Creamy Garlic Dressing,Food - Condiments
+44,Cinnamon Rolls,Food - Bakery
+45,Turkey Bacon,Food - Meat
+46,Chicken Parmesan Dinner Kit,Food - Frozen Meals
+47,Buffalo Chicken Dip,Food - Dips
+48,Blender Bottle,Fitness
+49,Travel Makeup Organizer,Beauty
+50,Comfy Slippers,Footwear
+51,Tahini,Food - Condiments
+52,Italian Herbal Seasoning,Food - Spices
+53,Sketchbook,Art Supplies
+54,Casual Sneakers,Clothing - Footwear
+55,Coconut Milk Ice Cream,Food - Frozen Desserts
+56,Multi-Layer Food Steamer,Kitchen
+57,Backpack,Accessories
+58,Roasted Red Pepper Sauce,Food - Sauces
+59,USB Wall Charger,Accessories
+60,Sweet Potato Tots,Food - Frozen Foods
+61,Stylish Wireless Earbuds,Audio
+62,Car Windshield Sun Shade,Automotive
+63,Carrot and Celery Sticks,Food - Produce
+64,Kids' Educational Tablet,Electronics
+65,Blue Corn Tortilla Chips,Food - Snacks
+66,Cherry Almond Protein Bar,Food - Snacks
+67,Kid's Fruit Snacks,Food - Snacks
+68,Adjustable Dog Harness,Pets
+69,Noise Cancelling Ear Muffs,Safety
+70,Honey Glazed Carrots,Food - Produce
+71,Mango Sticky Rice Dessert,Food - Frozen Desserts
+72,Athletic Jogging Jacket,Clothing - Outerwear
+73,Frozen Edamame,Food - Frozen Foods
+74,Adjustable Dumbbells,Fitness
+75,Insulated Wine Tote,Accessories
+76,Overnight Duffle Bag,Travel
+77,Children's Musical Instrument Set,Toys
+78,Maple Almond Granola,Food - Breakfast
+79,Hiking Gaiters,Outdoor
+80,Outdoor Camping Hammock,Outdoor
+81,Marinara Sauce,Food - Condiments
+82,Mango Salsa,Food - Condiments
+83,Animal Paw Print Soap Dispenser,Home
+84,Indoor Plants,Garden
+85,Cranberry Lime Sparkling Water,Food - Beverages
+86,Bluetooth Shower Speaker,Audio
+87,Lemon Garlic Shrimp,Food - Seafood
+88,Sweetened Condensed Milk,Food - Baking Goods
+89,Vintage Button-Down Shirt,Clothing - Shirts
+90,Electric Butter Churn,Kitchen
+91,Rain Jacket,Clothing
+92,Dark Chocolate Covered Pretzels,Food - Snacks
+93,Sweet Potato Chips,Food - Snacks
+94,Durable Hiking Boots,Footwear
+95,Vegetable Korma,Food - Frozen
+96,Induction Cooktop,Kitchen
+97,Pesto Genovese,Food - Condiments
+98,Pumpkin Spice Muffins,Food - Bakery
+99,Mixed Nuts,Food - Snacks
+100,Cat Tree with Scratching Posts,Pets
+101,Coconut Milk Ice Cream,Food - Frozen Desserts
+102,Teriyaki Chicken Stir-Fry,Food - Frozen Foods
+103,Chocolate Mint Thins,Food - Snacks
+104,Classic Cheesecake Mix,Food - Desserts
+105,Sesame Garlic Stir-Fry Sauce,Food - Sauces
+106,Cinnamon Sugar Tortilla Chips,Food - Snacks
+107,Outdoor Camping Lantern,Outdoor
+108,Flavored Popcorn Mix,Food - Snacks
+109,Inspirational Wall Art,Home
+110,Pet Camera with Treat Dispenser,Pets
+111,Garden Vegetable Soup,Food - Canned Goods
+112,Outdoor Camping Hammock,Outdoor
+113,Wireless Printer,Office
+114,Blackberry Jam,Food - Condiments
+115,Chipotle Black Bean Salad,Food - Salads
+116,Buffalo Wing Sauce,Food - Condiments
+117,Casual Long Cardigan,Clothing - Outerwear
+118,USB Wall Charger,Accessories
+119,Pasta Salad Kit,Food - Prepared Foods
+120,Cinnamon Raisin Bread,Food - Bakery
+121,Stuffed Grape Leaves,Food - Prepared Foods
+122,Pet Water Fountain with Filtration,Pets
+123,Laptop Backpack,Accessories
+124,Pistachios,Food - Nuts
+125,Desk Organizer Set,Office
+126,Whisk Set,Kitchen
+127,Wall-Mounted Wine Rack,Home
+128,Adjustable Kneeling Pad,Garden
+129,Inflatable Pool Float,Outdoor
+130,Homestyle Chicken Noodle Soup,Food - Canned Goods
+131,Steak Seasoning Rub,Food - Spices
+132,Stainless Steel Travel Mug,Kitchen
+133,Slingback Sandals,Clothing - Footwear
+134,Smartphone Gimbal,Electronics
+135,Handheld Garment Steamer,Home
+136,Artisan Flatbreads,Food - Bakery
+137,Car Vacuum,Automotive
+138,Fitness Resistance Bands Kit,Fitness
+139,Apple Sauce,Food - Canned Goods
+140,Portable UV Sterilizer,Health
+141,High-Waisted Skirt,Clothing - Bottoms
+142,Adjustable Resistance Bands,Fitness
+143,Green Smoothie Mix,Food - Beverages
+144,Gardening Gloves,Garden
+145,Smart Thermostat with Wi-Fi,Smart Home
+146,Sweet BBQ Dipping Sauce,Food - Condiments
+147,Salsa Verde,Food - Condiments
+148,Andouille Sausage,Food - Meat
+149,Overnight Duffle Bag,Travel
+150,Pleated Midi Dress,Clothing - Dresses
+151,Spicy Tuna Rolls,Food - Seafood
+152,Apple Pie Filling,Food - Canned Goods
+153,Black Bean Spaghetti,Food - Pasta
+154,Hibiscus Tea Bags,Food - Beverages
+155,Marinated Artichokes,Food - Vegetables
+156,Lemon Zest Olive Oil,Food - Oils & Vinegars
+157,Set of Decorative Storage Bins,Home
+158,Mango Salsa,Food - Condiments
+159,Maple Pecan Granola,Food - Breakfast
+160,Desk Organizer Set,Office
+161,Stainless Steel BBQ Grill Set,Outdoor
+162,Graphic Tee,Clothing
+163,Smart Home Hub,Smart Home
+164,Baking Soda,Food - Baking
+165,High-Quality Yoga Mat,Fitness
+166,Teriyaki Beef Strips,Food - Frozen Meals
+167,Water Bottle with Built-in Fruit Infuser,Fitness
+168,Peanut Butter Protein Balls,Food - Snacks
+169,Fitness Jump Rope,Fitness
+170,Outdoor Sports Backpack,Outdoor
+171,Artisan Flatbreads,Food - Bakery
+172,Grass Fed Beef Patties,Food - Meat
+173,Portable Laptop Table,Office
+174,Pepperoni Pizza Rolls,Food - Snacks
+175,Cabbage,Food - Produce
+176,Cinnamon Sugar Donuts,Food - Bakery
+177,Toy Building Set,Toys
+178,Cinnamon Sugar Popcorn,Food - Snacks
+179,Cranberry Pecan Granola,Food - Breakfast Foods
+180,Smart Light Switch,Smart Home
+181,Tailored Dress Pants,Clothing - Bottoms
+182,Oven Thermometer,Kitchen
+183,Stylish Wide-Leg Trousers,Clothing - Bottoms
+184,Mixed Nuts,Food - Snacks
+185,Avocado Lime Dressing,Food - Condiments
+186,Spicy Roasted Nuts,Food - Snacks
+187,Pineapple Rings,Food - Canned Goods
+188,Children's Educational Workbook,Books
+189,LED Makeup Mirror,Beauty
+190,Peach Halves (canned),Food - Canned Goods
+191,Buffalo Style Cauliflower Bites,Food - Frozen Vegetables
+192,Weighted Jump Rope,Fitness
+193,Mediterranean Olives,Food - Condiments
+194,LED Strip Lights with Remote Control,Home
+195,Cranberry Orange Juice,Food - Beverages
+196,Personal Security Alarm Keychain,Safety
+197,Adjustable Pet Feeder,Pets
+198,Mint Chocolate Chip Ice Cream,Food - Frozen Desserts
+199,Maple Cinnamon Almonds,Food - Nuts
+200,Chocolate Syrup,Food - Condiments
+201,Electric Pressure Washer,Home Improvement
+202,Fruit and Nut Energy Bites,Food - Snacks
+203,Wire Shelving Unit,Home
+204,Greek Feta Cheese,Food - Dairy
+205,Fitness Tracker Watch,Wearable Tech
+206,Cheese Stuffed Jalapenos,Food - Snacks
+207,Pet Bed,Pets
+208,Peach Slices (canned),Food - Canned Goods
+209,Portable Jump Starter,Automotive
+210,Foam Building Blocks for Kids,Toys
+211,Mango Salsa,Food - Condiments
+212,Wireless HDMI Receiver,Electronics
+213,Portable Hammock,Outdoor
+214,Non-Stick Baking Sheet,Kitchen
+215,Maple Pecan Pancake Mix,Food - Breakfast
+216,Chocolate Protein Powder,Food - Supplements
+217,Gardening Kneeler and Seat,Garden
+218,Coconut Flakes,Food - Baking
+219,Ginger Turmeric Latte Mix,Food - Beverages
+220,Portable Ice Maker,Kitchen
+221,Smart Home Security Camera,Smart Home
+222,Herbed Chicken Breast,Food - Meat
+223,Noise Cancelling Ear Muffs,Safety
+224,Lentil Soup (canned),Food - Canned Goods
+225,Insulated Sport Tumbler,Fitness
+226,Mediterranean Flatbread,Food - Bakery
+227,Electric Egg Cooker,Kitchen
+228,Frozen Mixed Vegetables,Food - Frozen
+229,Wall Art,Home
+230,Beef Sirloin Steak,Food - Meat
+231,Scent Diffuser Oil,Home
+232,Italian Sausage Links,Food - Meat & Poultry
+233,Low-Fat Cottage Cheese,Food - Dairy
+234,French Bread,Food - Bakery
+235,Solar Charger,Electronics
+236,Chili Garlic Sauce,Food - Condiments
+237,Coffee Grinder,Kitchen
+238,Potato Wedge Seasoning,Food - Condiments
+239,Organic Tomato Ketchup,Food - Condiments
+240,Children's Educational Puzzle,Toys
+241,Honey Glazed Carrots,Food - Produce
+242,Plaid Flannel Shirt,Clothing - Tops
+243,Luxury Yoga Mat,Fitness
+244,Children's Educational Workbook,Books
+245,Dual Function Electric Skillet,Kitchen
+246,Elegant Maxi Skirt,Clothing - Bottoms
+247,Silicone Baking Molds,Kitchen
+248,Garlic Butter Sauce,Food - Condiments
+249,Canned Coconut Milk,Food - Canned Goods
+250,Organic Quinoa,Food - Grains
+251,Cabbage,Food - Produce
+252,Lentils,Food - Grains
+253,Portable Camping Shower,Outdoor
+254,Multi-Purpose Marine Rope,Outdoor
+255,Honey Butter Popcorn,Food - Snacks
+256,LED Christmas Lights,Home
+257,Mini Projector,Electronics
+258,Paprika,Food - Spices
+259,Trainers with Mesh Inserts,Clothing - Footwear
+260,Avocado Oil Mayo,Food - Condiments
+261,Photo Album,Home
+262,Margherita Pizza,Food - Frozen Foods
+263,Adjustable Kneeling Pad,Garden
+264,Classic Vanilla Fudge,Food - Desserts
+265,Stick Vacuums Cleaner,Home Appliances
+266,Herbed Goat Cheese,Food - Cheese
+267,Digital Meat Thermometer,Kitchen
+268,Cabbage,Food - Produce
+269,LED Camping Lantern with USB Charging,Outdoor
+270,Self-Stirring Mug,Kitchen
+271,Smart Wi-Fi Camera,Smart Home
+272,Organic Coconut Yogurt,Food - Dairy
+273,Wrap Front Midi Skirt,Clothing - Bottoms
+274,LED Disco Ball Light,Home
+275,Maple Almond Butter,Food - Nut Butters
+276,Thai Peanut Noodles,Food - Pasta
+277,Organic Lentil Soup,Food - Soups
+278,Pretzel Bites,Food - Snacks
+279,Travel Jewelry Organizer,Accessories
+280,Cable Knit Cardigan,Clothing - Outerwear
+281,Wireless Charger,Accessories
+282,Spicy Hummus,Food - Deli
+283,Fitness Jump Box,Fitness
+284,Sour Cream,Food - Dairy
+285,Honey Sesame Chicken,Food - Frozen Food
+286,Travel Orthopedic Pillow,Travel
+287,Low-Fat Yogurt,Food - Dairy
+288,Cinnamon Roll Dough,Food - Bakery
+289,Jigsaw Puzzle,Toys
+290,Vegan Protein Powder,Health
+291,Adjustable Dumbbells,Fitness
+292,Non-Stick Grill Mat,Outdoor
+293,Adjustable Garden Rake,Garden
+294,Cheesy Broccoli Soup Mix,Food - Soups
+295,Microfiber Cleaning Cloth Set,Home
+296,Sculpting Kit,Art Supplies
+297,Sushi Rice,Food - Grains
+298,Smoked Paprika Chicken Thighs,Food - Meat
+299,Wireless Earbuds Case,Accessories
+300,Utility Cargo Pants,Clothing - Pants
