@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/6/2025 9:32:29 AM"
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABDR/xETrE4ljaE7WZskxQIc+GSbHPQ650ZSnPLisPFOwAAAAAOgAAAAAIAACAAAABDlySBQF5OgDNzB+7Ibd+Pw/PScAY0B6BYA5TF+m+03SAAAABrygn4b5TFF8xN4ygIXzQtJEkvwzfUhi1ZNNSTRpZq8kAAAADR2Kbw8arj2zBK2NabxaiBI0NMDBF17TUYnVl/8dpNiRDC3SCgstXpPdLSozPkdykesauMMzzP+6SeCcqn77BB</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAf2PJ10k+KJBE4M41/l+GqLTgClqlvhIm1I2UE6QoWDQAAAAAOgAAAAAIAACAAAAC8CquI2yyFLigPwNuf0iI6X0Za1bE243Ctm5fuYwl/WSAAAAADxEOG+Y1+HHKtHdtnicVxvhrNunMmeTZsUEB/R8udDUAAAAAfAw+9UDC2zWlP5/vGbZfzIAioz6Gi+f/lweqiIZvc5a6QTaaohJvq8lcPTKix5YqYmg/XbNLA6NAVetz4sT+2</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADYF4IcwDPT8Xf6YthDad9QqYNm7uGTBobJtaIK/dhONAAAAAAOgAAAAAIAACAAAAAaLaW2S+b4dYWctH78irW5M5wkMVQj6AALq1JXehbNtyAAAAAhsD7bQUO9Q3iJ3dwmSykvq8Uz1OU/wPvXXwRnzXllMUAAAABxSVkphwe8rV/z+IM+BRI8Pc/YkiqrN1X6JUsQ0zpbsfFNnO1nxLDQEqduB3Okc0lafIM1F8vgdengeXSo59U9</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAdm05DAP38rFkdaIVVnWh1sXfqmhkCOkc94VJzZfJw1gAAAAAOgAAAAAIAACAAAADMtZPjnaQd0+w718DD6Mr7/DuGkGlh+Ob5JL4n7Bx++iAAAADqPAOdq+e9Jgd6JSG2hTVP+WlSzhgJITa9p72t/rdn9EAAAABzChW5/DHuFR+orfvuh7BglhIZ4040GTaZUzWuMavbfhxilgbPufpdwfBIAPr+s4WVic/GPLqmVWoSuqKEwS3a</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

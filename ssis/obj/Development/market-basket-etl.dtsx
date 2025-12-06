@@ -1,0 +1,2588 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/5/2025 9:04:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-N0CSB19"
+  DTS:CreatorName="DESKTOP-N0CSB19\User"
+  DTS:DTSID="{3FAAF2F4-17B6-477E-AB32-8BDCC4F7EC3F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{A6378AAC-F86E-4596-8FBC-97FF2A086185}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A2F3D271-4AD1-41E2-92BF-8223005BEFC5}"
+      DTS:ObjectName="127.0.0.1,1433.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=127.0.0.1,1433;User ID=sa;Initial Catalog=olap;Provider=MSOLEDBSQL19.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{A2F3D271-4AD1-41E2-92BF-8223005BEFC5}127.0.0.1,1433.sa;Trust Server Certificate=True;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAAFAQxgtjlGH0XcuzutwT2oPa9oB8K050QwhXsmxHeKAAAAAAOgAAAAAIAACAAAAB1iuNjo+N4MGW8keF34XswZXqZD0+QwdU0Z4mftDRA6CAAAAAy1N6R0qffRqF+ctU5/V2nP1yaZNFVNv6K6X3NHzj9r0AAAACs9YH8AG6yNlTSsXji3Y9CQKS8CxfElEL9Gtxb1i8Bg+GTt7jg+o3rSPrN7RoGI2V+7Bv5TNcoLeW+CLY7kwcc</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8E03D893-C57D-4521-8490-2983AFA240F0}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Development Projects\data-warehousing-ssis\Data Warehousing SSIS\output\market-basket.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ordered_date_id"
+              DTS:DTSID="{0FEAAD23-25D2-470E-A08C-50A93D4B9B1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_a_id"
+              DTS:DTSID="{29ADA52E-B481-4429-9892-E5F11B262CA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_b_id"
+              DTS:DTSID="{0E69C5EB-ED8A-48F5-B07A-F3341EC79131}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="branch_id"
+              DTS:DTSID="{7242DE79-DE83-43F2-B7E2-4CE7367491C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_a_qty"
+              DTS:DTSID="{D94E0DCB-DBB8-4898-9A5F-7BB2A0E3376C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_b_qty"
+              DTS:DTSID="{43959CAF-9836-403C-A671-65800B18F371}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="21"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_a_amt"
+              DTS:DTSID="{C81C7DC5-ABD9-4953-B19D-8A3260BE02E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="21"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_b_amt"
+              DTS:DTSID="{541908D3-1B42-4BDB-8091-B08E03C97F9B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C88BEABA-13A6-4214-849D-889CE8024908}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL\Filter Unique"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Filter Unique"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL\Filter Unique.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL\Filter Unique.Inputs[Conditional Split Input].Columns[product_a_id]"
+                      cachedDataType="i4"
+                      cachedName="product_a_id"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Filter Unique.Inputs[Conditional Split Input].Columns[product_b_id]"
+                      cachedDataType="i4"
+                      cachedName="product_b_id"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL\Filter Unique.Outputs[Unique]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Unique"
+                  synchronousInputId="Package\ETL\Filter Unique.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_id]} &lt; #{Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_id]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">product_a_id &lt; product_b_id</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL\Filter Unique.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\ETL\Filter Unique.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL\Filter Unique.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\ETL\Filter Unique.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\Filter Unique.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Filter Unique.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL\Filter Unique.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Filter Unique.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL\Market Basket CSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Market Basket CSV"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL\Market Basket CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].Columns[ordered_date_id]"
+                      cachedDataType="i4"
+                      cachedName="ordered_date_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[ordered_date_id]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[ordered_date_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].Columns[product_a_id]"
+                      cachedDataType="i4"
+                      cachedName="product_a_id"
+                      externalMetadataColumnId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_a_id]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].Columns[product_b_id]"
+                      cachedDataType="i4"
+                      cachedName="product_b_id"
+                      externalMetadataColumnId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_b_id]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].Columns[branch_id]"
+                      cachedDataType="i4"
+                      cachedName="branch_id"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[branch_id]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[branch_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].Columns[product_a_qty]"
+                      cachedDataType="i4"
+                      cachedName="product_a_qty"
+                      externalMetadataColumnId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_a_qty]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_qty]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].Columns[product_b_qty]"
+                      cachedDataType="i4"
+                      cachedName="product_b_qty"
+                      externalMetadataColumnId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_b_qty]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_qty]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].Columns[product_a_amt]"
+                      cachedDataType="numeric"
+                      cachedName="product_a_amt"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_a_amt]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_amt]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].Columns[product_b_amt]"
+                      cachedDataType="numeric"
+                      cachedName="product_b_amt"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_b_amt]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_amt]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[ordered_date_id]"
+                      dataType="i4"
+                      name="ordered_date_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_a_id]"
+                      dataType="i4"
+                      name="product_a_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_b_id]"
+                      dataType="i4"
+                      name="product_b_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[branch_id]"
+                      dataType="i4"
+                      name="branch_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_a_qty]"
+                      dataType="i4"
+                      name="product_a_qty" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_b_qty]"
+                      dataType="i4"
+                      name="product_b_qty" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_a_amt]"
+                      dataType="numeric"
+                      name="product_a_amt"
+                      precision="21"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input].ExternalColumns[product_b_amt]"
+                      dataType="numeric"
+                      name="product_b_amt"
+                      precision="21"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\ETL\Market Basket Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Market Basket Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[MarketBasket]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL\Market Basket Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].Columns[ordered_date_id]"
+                      cachedDataType="i4"
+                      cachedName="ordered_date_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[ordered_date_id]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[ordered_date_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].Columns[product_a_id]"
+                      cachedDataType="i4"
+                      cachedName="product_a_id"
+                      externalMetadataColumnId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_a_id]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].Columns[product_b_id]"
+                      cachedDataType="i4"
+                      cachedName="product_b_id"
+                      externalMetadataColumnId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_b_id]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].Columns[branch_id]"
+                      cachedDataType="i4"
+                      cachedName="branch_id"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[branch_id]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[branch_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].Columns[product_a_qty]"
+                      cachedDataType="i4"
+                      cachedName="product_a_qty"
+                      externalMetadataColumnId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_a_qty]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_qty]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].Columns[product_b_qty]"
+                      cachedDataType="i4"
+                      cachedName="product_b_qty"
+                      externalMetadataColumnId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_b_qty]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_qty]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].Columns[product_a_amt]"
+                      cachedDataType="numeric"
+                      cachedName="product_a_amt"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_a_amt]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_amt]" />
+                    <inputColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].Columns[product_b_amt]"
+                      cachedDataType="numeric"
+                      cachedName="product_b_amt"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_b_amt]"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_amt]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[ordered_date_id]"
+                      dataType="i4"
+                      name="ordered_date_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_a_id]"
+                      dataType="i4"
+                      name="product_a_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_b_id]"
+                      dataType="i4"
+                      name="product_b_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[branch_id]"
+                      dataType="i4"
+                      name="branch_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_a_qty]"
+                      dataType="i4"
+                      name="product_a_qty" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_b_qty]"
+                      dataType="i4"
+                      name="product_b_qty" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_a_amt]"
+                      dataType="numeric"
+                      name="product_a_amt"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input].ExternalColumns[product_b_amt]"
+                      dataType="numeric"
+                      name="product_b_amt"
+                      precision="10"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL\Market Basket Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\Market Basket Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Market Basket Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL\Market Basket Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Market Basket Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">2</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ETL\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[branch_id]"
+                      cachedDataType="i4"
+                      cachedName="branch_id"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[branch_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[ordered_date_id]"
+                      cachedDataType="i4"
+                      cachedName="ordered_date_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[ordered_date_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[total_price]"
+                      cachedDataType="numeric"
+                      cachedName="total_price"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[total_price]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\ETL\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Right Input].Columns[branch_id]"
+                      cachedDataType="i4"
+                      cachedName="branch_id"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[branch_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Right Input].Columns[ordered_date_id]"
+                      cachedDataType="i4"
+                      cachedName="ordered_date_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[ordered_date_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Right Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Right Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\ETL\Merge Join.Inputs[Merge Join Right Input].Columns[total_price]"
+                      cachedDataType="numeric"
+                      cachedName="total_price"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[total_price]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[ordered_date_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[ordered_date_id]"
+                      name="ordered_date_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[ordered_date_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_id]"
+                      name="product_a_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[product_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_id]"
+                      name="product_b_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ETL\Merge Join.Inputs[Merge Join Right Input].Columns[product_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[branch_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[branch_id]"
+                      name="branch_id"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[branch_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_qty]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_qty]"
+                      name="product_a_qty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[quantity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_qty]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_qty]"
+                      name="product_b_qty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ETL\Merge Join.Inputs[Merge Join Right Input].Columns[quantity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_amt]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_a_amt]"
+                      name="product_a_amt"
+                      precision="21"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ETL\Merge Join.Inputs[Merge Join Left Input].Columns[total_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_amt]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Merge Join.Outputs[Merge Join Output].Columns[product_b_amt]"
+                      name="product_b_amt"
+                      precision="21"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\ETL\Merge Join.Inputs[Merge Join Right Input].Columns[total_price]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\ETL\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\ETL\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\ETL\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\ETL\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL\OrderItems Fact Table 1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OrderItems Fact Table 1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_OrderItem]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL\OrderItems Fact Table 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[order_item_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[order_item_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[order_item_id]"
+                      name="order_item_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[product_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[vendor_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[vendor_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[vendor_id]"
+                      name="vendor_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[branch_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[branch_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[branch_id]"
+                      name="branch_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      length="8"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[unit_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[unit_price]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[total_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[total_price]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[total_price]"
+                      name="total_price"
+                      precision="21"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[contract_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[contract_price]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[contract_price]"
+                      name="contract_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[deviation_from_contract_price]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[deviation_from_contract_price]"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[ordered_date_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[ordered_date_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[ordered_date_id]"
+                      name="ordered_date_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[order_item_id]"
+                      dataType="i4"
+                      name="order_item_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[vendor_id]"
+                      dataType="i4"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[branch_id]"
+                      dataType="i4"
+                      name="branch_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[unit_price]"
+                      dataType="numeric"
+                      name="unit_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[total_price]"
+                      dataType="numeric"
+                      name="total_price"
+                      precision="21"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[contract_price]"
+                      dataType="numeric"
+                      name="contract_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].ExternalColumns[ordered_date_id]"
+                      dataType="i4"
+                      name="ordered_date_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[order_item_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[order_item_id]"
+                      name="order_item_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[vendor_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[vendor_id]"
+                      name="vendor_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[branch_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[branch_id]"
+                      name="branch_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      name="employee_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[unit_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[total_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[total_price]"
+                      name="total_price"
+                      precision="21"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[contract_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[contract_price]"
+                      name="contract_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[deviation_from_contract_price]"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[ordered_date_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[ordered_date_id]"
+                      name="ordered_date_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL\OrderItems Fact Table 2"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OrderItems Fact Table 2"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_OrderItem]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL\OrderItems Fact Table 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[order_item_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[order_item_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[order_item_id]"
+                      name="order_item_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[product_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[vendor_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[vendor_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[vendor_id]"
+                      name="vendor_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[branch_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[branch_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[branch_id]"
+                      name="branch_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      length="8"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[unit_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[unit_price]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[total_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[total_price]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[total_price]"
+                      name="total_price"
+                      precision="21"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[contract_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[contract_price]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[contract_price]"
+                      name="contract_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[deviation_from_contract_price]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[deviation_from_contract_price]"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[ordered_date_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[ordered_date_id]"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[ordered_date_id]"
+                      name="ordered_date_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[order_item_id]"
+                      dataType="i4"
+                      name="order_item_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[vendor_id]"
+                      dataType="i4"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[branch_id]"
+                      dataType="i4"
+                      name="branch_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[unit_price]"
+                      dataType="numeric"
+                      name="unit_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[total_price]"
+                      dataType="numeric"
+                      name="total_price"
+                      precision="21"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[contract_price]"
+                      dataType="numeric"
+                      name="contract_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].ExternalColumns[ordered_date_id]"
+                      dataType="i4"
+                      name="ordered_date_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[order_item_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[order_item_id]"
+                      name="order_item_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[vendor_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[vendor_id]"
+                      name="vendor_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[branch_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[branch_id]"
+                      name="branch_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      name="employee_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[unit_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[total_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[total_price]"
+                      name="total_price"
+                      precision="21"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[contract_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[contract_price]"
+                      name="contract_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[deviation_from_contract_price]"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[ordered_date_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[ordered_date_id]"
+                      name="ordered_date_id" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ETL\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[order_item_id]"
+                      cachedDataType="i4"
+                      cachedName="order_item_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[order_item_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[product_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[vendor_id]"
+                      cachedDataType="i4"
+                      cachedName="vendor_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[vendor_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[branch_id]"
+                      cachedDataType="i4"
+                      cachedName="branch_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[branch_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[employee_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="employee_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[employee_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[unit_price]"
+                      cachedDataType="numeric"
+                      cachedName="unit_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[unit_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[quantity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[total_price]"
+                      cachedDataType="numeric"
+                      cachedName="total_price"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[total_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[contract_price]"
+                      cachedDataType="numeric"
+                      cachedName="contract_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[contract_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[deviation_from_contract_price]"
+                      cachedDataType="numeric"
+                      cachedName="deviation_from_contract_price"
+                      cachedPrecision="11"
+                      cachedScale="2"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[deviation_from_contract_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 1.Inputs[Sort Input].Columns[ordered_date_id]"
+                      cachedDataType="i4"
+                      cachedName="ordered_date_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[ordered_date_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[order_item_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[order_item_id]"
+                      name="order_item_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[order_item_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[product_id]"
+                      name="product_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[product_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[vendor_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[vendor_id]"
+                      name="vendor_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[vendor_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[branch_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[branch_id]"
+                      name="branch_id"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[branch_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[employee_id]"
+                      name="employee_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[employee_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[unit_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[unit_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[quantity]"
+                      name="quantity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[quantity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[total_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[total_price]"
+                      name="total_price"
+                      precision="21"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[total_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[contract_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[contract_price]"
+                      name="contract_price"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[contract_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[deviation_from_contract_price]"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[deviation_from_contract_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[ordered_date_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 1.Outputs[Sort Output].Columns[ordered_date_id]"
+                      name="ordered_date_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output].Columns[ordered_date_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL\Sort 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ETL\Sort 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[order_item_id]"
+                      cachedDataType="i4"
+                      cachedName="order_item_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[order_item_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[product_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[vendor_id]"
+                      cachedDataType="i4"
+                      cachedName="vendor_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[vendor_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[branch_id]"
+                      cachedDataType="i4"
+                      cachedName="branch_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[branch_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[employee_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="employee_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[employee_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[unit_price]"
+                      cachedDataType="numeric"
+                      cachedName="unit_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[unit_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[quantity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[total_price]"
+                      cachedDataType="numeric"
+                      cachedName="total_price"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[total_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[contract_price]"
+                      cachedDataType="numeric"
+                      cachedName="contract_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[contract_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[deviation_from_contract_price]"
+                      cachedDataType="numeric"
+                      cachedName="deviation_from_contract_price"
+                      cachedPrecision="11"
+                      cachedScale="2"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[deviation_from_contract_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL\Sort 2.Inputs[Sort Input].Columns[ordered_date_id]"
+                      cachedDataType="i4"
+                      cachedName="ordered_date_id"
+                      lineageId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[ordered_date_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL\Sort 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[order_item_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[order_item_id]"
+                      name="order_item_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[order_item_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[product_id]"
+                      name="product_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[product_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[vendor_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[vendor_id]"
+                      name="vendor_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[vendor_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[branch_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[branch_id]"
+                      name="branch_id"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[branch_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[employee_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[employee_id]"
+                      name="employee_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[employee_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[unit_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[unit_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[quantity]"
+                      name="quantity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[quantity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[total_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[total_price]"
+                      name="total_price"
+                      precision="21"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[total_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[contract_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[contract_price]"
+                      name="contract_price"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[contract_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[deviation_from_contract_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[deviation_from_contract_price]"
+                      name="deviation_from_contract_price"
+                      precision="11"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[deviation_from_contract_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[ordered_date_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL\Sort 2.Outputs[Sort Output].Columns[ordered_date_id]"
+                      name="ordered_date_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output].Columns[ordered_date_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL.Paths[Merge Join Output]"
+              endId="Package\ETL\Filter Unique.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\ETL\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\ETL.Paths[Multicast Output 1]"
+              endId="Package\ETL\Market Basket CSV.Inputs[Flat File Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\ETL\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\ETL.Paths[Multicast Output 2]"
+              endId="Package\ETL\Market Basket Table.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 2"
+              startId="Package\ETL\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\ETL.Paths[OLE DB Source Output]"
+              endId="Package\ETL\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\ETL\OrderItems Fact Table 1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\ETL.Paths[OLE DB Source Output1]"
+              endId="Package\ETL\Sort 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\ETL\OrderItems Fact Table 2.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\ETL.Paths[Sort Output]"
+              endId="Package\ETL\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\ETL\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\ETL.Paths[Sort Output1]"
+              endId="Package\ETL\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\ETL\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\ETL.Paths[Unique]"
+              endId="Package\ETL\Multicast.Inputs[Multicast Input 1]"
+              name="Unique"
+              startId="Package\ETL\Filter Unique.Outputs[Unique]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\ETL"
+          TopLeft="363.124983767048,229.894734317907" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ETL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\ETL\OrderItems Fact Table 1"
+          TopLeft="186.874991646037,134.789472204249" />
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\ETL\OrderItems Fact Table 2"
+          TopLeft="419.374981252477,133.456140012815" />
+        <NodeLayout
+          Size="108,42.6666666666667"
+          Id="Package\ETL\Sort 1"
+          TopLeft="228.124989802018,217.578944979447" />
+        <EdgeLayout
+          Id="Package\ETL.Paths[OLE DB Source Output]"
+          TopLeft="283.166657390694,177.456138870915">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.1228061085318"
+              Start="0,0"
+              End="0,32.6228061085318">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.6228061085318" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="108,42.6666666666667"
+          Id="Package\ETL\Sort 2"
+          TopLeft="470.624978961424,221.71929693844" />
+        <EdgeLayout
+          Id="Package\ETL.Paths[OLE DB Source Output1]"
+          TopLeft="520.666646773617,176.122806679481">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5964902589582"
+              Start="0,0"
+              End="0,38.0964902589582">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0964902589582" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\ETL\Merge Join"
+          TopLeft="342.499984689057,317.473680724728" />
+        <EdgeLayout
+          Id="Package\ETL.Paths[Sort Output]"
+          TopLeft="282.124989802018,260.245611646114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.708328220372,57.2280690786141"
+              Start="0,0"
+              End="105.708328220372,49.7280690786141">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.9256217891185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.9256217891185"
+                    Point2="0,33.9256217891185"
+                    Point3="4,33.9256217891185" />
+                  <mssgle:LineSegment
+                    End="101.708328220372,33.9256217891185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.708328220372,33.9256217891185"
+                    Point2="105.708328220372,33.9256217891185"
+                    Point3="105.708328220372,37.9256217891185" />
+                  <mssgle:LineSegment
+                    End="105.708328220372,49.7280690786141" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL.Paths[Sort Output1]"
+          TopLeft="524.624978961424,264.385963605106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-95.4583276056998,53.0877171196216"
+              Start="0,0"
+              End="-95.4583276056998,45.5877171196216">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.4711616457637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.4711616457637"
+                    Point2="0,31.4711616457637"
+                    Point3="-4,31.4711616457637" />
+                  <mssgle:LineSegment
+                    End="-91.4583276056998,31.4711616457637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-91.4583276056998,31.4711616457637"
+                    Point2="-95.4583276056998,31.4711616457637"
+                    Point3="-95.4583276056998,35.4711616457637" />
+                  <mssgle:LineSegment
+                    End="-95.4583276056998,45.5877171196216" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\ETL\Market Basket CSV"
+          TopLeft="230.673066611187,587.368414603442" />
+        <NodeLayout
+          Size="140,42.6666666666667"
+          Id="Package\ETL\Filter Unique"
+          TopLeft="331.874985164032,409.842100763173" />
+        <EdgeLayout
+          Id="Package\ETL.Paths[Merge Join Output]"
+          TopLeft="405.187484926545,360.140347391395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.7017533717779"
+              Start="0,0"
+              End="0,42.2017533717779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.2017533717779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\ETL\Multicast"
+          TopLeft="347.115369098118,499.514165417411" />
+        <EdgeLayout
+          Id="Package\ETL.Paths[Unique]"
+          TopLeft="404.828510464408,452.508767429839">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.0053979875721"
+              Start="0,0"
+              End="0,39.5053979875721">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5053979875721" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.94529296875,14.0871716500361,31.8905859375,11.3310546875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL.Paths[Multicast Output 1]"
+          TopLeft="407.782035764785,542.180832084078">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-91.1089691535978,45.1875825193644"
+              Start="0,0"
+              End="-91.1089691535978,37.6875825193644">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5937912596822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5937912596822"
+                    Point2="0,22.5937912596822"
+                    Point3="-4,22.5937912596822" />
+                  <mssgle:LineSegment
+                    End="-87.1089691535978,22.5937912596822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-87.1089691535978,22.5937912596822"
+                    Point2="-91.1089691535978,22.5937912596822"
+                    Point3="-91.1089691535978,26.5937912596822" />
+                  <mssgle:LineSegment
+                    End="-91.1089691535978,37.6875825193644" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177.333333333334,42.6666666666667"
+          Id="Package\ETL\Market Basket Table"
+          TopLeft="466.826902208134,587.705798132069" />
+        <EdgeLayout
+          Id="Package\ETL.Paths[Multicast Output 2]"
+          TopLeft="426.670924653674,542.180832084078">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.822644221127,45.5249660479909"
+              Start="0,0"
+              End="128.822644221127,38.0249660479909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5654959154497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5654959154497"
+                    Point2="0,18.5654959154497"
+                    Point3="4,18.5654959154497" />
+                  <mssgle:LineSegment
+                    End="124.822644221127,18.5654959154497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.822644221127,18.5654959154497"
+                    Point2="128.822644221127,18.5654959154497"
+                    Point3="128.822644221127,22.5654959154497" />
+                  <mssgle:LineSegment
+                    End="128.822644221127,38.0249660479909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL\OrderItems Fact Table 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL\OrderItems Fact Table 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL\Market Basket Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
