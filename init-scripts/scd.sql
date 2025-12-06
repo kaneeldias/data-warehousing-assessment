@@ -4,6 +4,7 @@ GO
 USE scd;
 GO
 
+DROP TABLE IF EXISTS Customer;
 CREATE TABLE Customer(
     CustomerID INT PRIMARY KEY,
     CustomerName VARCHAR(100),
@@ -27,6 +28,7 @@ INSERT INTO Customer (CustomerID, CustomerName, Address, City, PostalCode, Conta
 (10, 'Laura Thomas', '159 Chestnut St', 'Pinehurst', '66778', '555-0123');
 GO
 
+DROP TABLE IF EXISTS DimCustomer_type1
 CREATE TABLE DimCustomer_type1(
     CustomerKey INT IDENTITY(1,1) PRIMARY KEY,
     CustomerID INT,
@@ -38,6 +40,7 @@ CREATE TABLE DimCustomer_type1(
 )
 GO
 
+DROP TABLE IF EXISTS DimCustomer_type2;
 CREATE TABLE DimCustomer_type2(
     CustomerKey INT IDENTITY(1,1) PRIMARY KEY,
     CustomerID INT,
@@ -48,5 +51,18 @@ CREATE TABLE DimCustomer_type2(
     ContactNumber VARCHAR(20),
     EffectiveDate DATETIME,
     ExpiryDate DATETIME,
+)
+GO
+
+DROP TABLE IF EXISTS DimCustomer_type3;
+CREATE TABLE DimCustomer_type3(
+    CustomerKey INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT,
+    CustomerName VARCHAR(100),
+    Address VARCHAR(200),
+    City VARCHAR(100),
+    PostalCode VARCHAR(20),
+    ContactNumber VARCHAR(20),
+    PreviousContactNumber VARCHAR(20),
 )
 GO
