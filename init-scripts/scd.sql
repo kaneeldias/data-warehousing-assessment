@@ -10,7 +10,7 @@ CREATE TABLE Customer(
     Address VARCHAR(200),
     City VARCHAR(100),
     PostalCode VARCHAR(20),
-    ContactNumber NVARCHAR(20)
+    ContactNumber VARCHAR(20)
 )
 GO
 
@@ -25,6 +25,7 @@ INSERT INTO Customer (CustomerID, CustomerName, Address, City, PostalCode, Conta
 (8, 'Amanda Martinez', '258 Willow St', 'Oakwood', '22334', '555-6543'),
 (9, 'James Anderson', '369 Poplar St', 'Cedarville', '44556', '555-7890'),
 (10, 'Laura Thomas', '159 Chestnut St', 'Pinehurst', '66778', '555-0123');
+GO
 
 CREATE TABLE DimCustomer_type1(
     CustomerKey INT IDENTITY(1,1) PRIMARY KEY,
@@ -33,5 +34,19 @@ CREATE TABLE DimCustomer_type1(
     Address VARCHAR(200),
     City VARCHAR(100),
     PostalCode VARCHAR(20),
-    ContactNumber NVARCHAR(20),
+    ContactNumber VARCHAR(20),
 )
+GO
+
+CREATE TABLE DimCustomer_type2(
+    CustomerKey INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT,
+    CustomerName VARCHAR(100),
+    Address VARCHAR(200),
+    City VARCHAR(100),
+    PostalCode VARCHAR(20),
+    ContactNumber VARCHAR(20),
+    EffectiveDate DATETIME,
+    ExpiryDate DATETIME,
+)
+GO
