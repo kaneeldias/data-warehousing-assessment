@@ -36,7 +36,6 @@ BEGIN
     SELECT @cols = STRING_AGG(QUOTENAME([date]), ',') WITHIN GROUP (ORDER BY [date])
     FROM (SELECT DISTINCT [date] FROM dbo.Sales) years;
 
-    -- Recreate concrete pivot table
     SET @sql = N'
     DROP TABLE IF EXISTS dbo.mv_view_1;
     SELECT product, ' + @cols + N'
@@ -76,10 +75,10 @@ GO
 EXEC msdb.dbo.sp_add_jobschedule
     @job_name = N'Refresh_mv_view_hourly',
     @name = N'Hourly schedule',
-    @freq_type = 4,               -- daily
-    @freq_interval = 1,           -- every day
-    @freq_subday_type = 8,        -- hours
-    @freq_subday_interval = 1,    -- every 1 hour
+    @freq_type = 4,
+    @freq_interval = 1,
+    @freq_subday_type = 8,
+    @freq_subday_interval = 1,
     @active_start_time = 000000;
 GO
 
