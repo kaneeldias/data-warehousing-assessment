@@ -1,4 +1,4 @@
-    SELECT
+SELECT
     type.product_type,
     category.product_category,
     product.product,
