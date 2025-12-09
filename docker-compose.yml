@@ -42,6 +42,7 @@ services:
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/market_basket.sql; \
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/scd.sql; \
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/materialized_views.sql; \
+        /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/hierarchy.sql; \
     restart: "no"
 
 volumes:

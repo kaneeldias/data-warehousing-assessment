@@ -1,0 +1,398 @@
+product_category_id,product_category,product_type_id
+1,Baking Accessories,1
+2,Wraps and Flatbreads,2
+3,Nuts and Trail Mix,3
+4,Cycling Accessories,4
+5,Fruit Sauces,5
+6,Portable Projectors,6
+7,Tech Accessories,7
+8,Breads,8
+9,Home Furnishings,9
+10,Grooming Supplies,10
+11,Home Organization,9
+12,Garden Supplies,11
+13,Oral Care & Hygiene,12
+14,Educational Toys,13
+15,Soups & Broths,14
+16,Health Drinks,15
+17,Storage Devices,16
+18,Savory Breakfast Options,17
+19,Digital Cameras,18
+20,Planters,11
+21,Instant Breakfast,17
+22,Food Storage Solutions,1
+23,BBQ Sauces,5
+24,Plant-Based Cheese,19
+25,Outdoor Play Toys,13
+26,Home Entertainment Equipment,6
+27,Pet Technology,10
+28,Coffee Equipment,1
+29,Specialty Cheeses,20
+30,Creamy Soups,21
+31,Whole Grains,22
+32,Camping Equipment,4
+33,Herbal Beverages,15
+34,Home Accessories,23
+35,Pasta,22
+36,Wearable Technology,24
+37,Breakfast Meats,25
+38,Frozen Meat Products,26
+39,Healthy Snacks,3
+40,Seasoning Blends,5
+41,Injury Prevention & Recovery,12
+42,Wellness & Relaxation,12
+43,Grain Salads,27
+44,Smart Plugs & Outlets,23
+45,Chocolate Snacks,3
+46,Kitchen Gadgets,1
+47,Specialty Pasta,28
+48,Rice,22
+49,Portable Power Solutions,6
+50,Health & Wellness Tools,24
+51,Small Appliances,1
+52,Cocktail Dresses,29
+53,Cleaning Appliances,30
+54,Dressing,5
+55,Activewear Jackets,31
+56,DIY Crafts,32
+57,Baking Ingredients,33
+58,Prepared Meals,34
+59,Vegetables,35
+60,Dips,5
+61,Home Decor,9
+62,Vegetable Mixes,36
+63,Savory Snacks,3
+64,Seasoned Grains,22
+65,Sauces,5
+66,Cheese,37
+67,Travel Accessories,38
+68,Specialty Soups,21
+69,Personal Care & Grooming,12
+70,Cooling Appliances,30
+71,Drawing Supplies,39
+72,Baking Mixes,40
+73,Dairy Alternatives,37
+74,Dresses,29
+75,Vegetable Snacks,41
+76,Mobile Accessories,6
+77,Dishwashers,30
+78,Outdoor Footwear,42
+79,Sleepwear,43
+80,Outdoor Accessories,4
+81,Salsas and Dips,3
+82,Lighting & Lamps,9
+83,Pasta Sauces,45
+84,Beverages,46
+85,Barware,1
+86,Frozen Pizza,26
+87,Gardening Accessories,11
+88,Oils,47
+89,Granola & Muesli,17
+90,Yoga Equipment,24
+91,Granola,48
+92,Pet Supplies,10
+93,Camera Accessories,6
+94,Kitchen Accessories,9
+95,Cookware Accessories,1
+96,Root Vegetables,35
+97,Nail Care,49
+98,Arcade Machines & Cabinets,50
+99,Healthy Salads,27
+100,Beverage Appliances,1
+101,Cookware,1
+102,Meat Snacks,3
+103,Outdoor Recreation,4
+104,Sauces & Condiments,14
+105,Pet Accessories,10
+106,Flours & Meals,33
+107,Automotive Accessories,51
+108,Hair Care Tools,49
+109,Cat Furniture,10
+110,Lighting,52
+111,Nut-Based Snacks,3
+112,Tablets for Kids,6
+113,Recovery Tools,24
+114,Fruit Spreads,5
+115,Pretend Play Toys,13
+116,Training Supplies,10
+117,Headphones & Earbuds,53
+118,Frozen Meals,26
+119,Dips & Spreads,5
+120,Canned Soups,21
+121,Team Sports,54
+122,Seasonal Home Decor,9
+123,Canned Fruits,14
+124,Dessert Toppings,5
+125,Furniture,52
+126,Wireless Video Transmission,6
+127,Gardening Kits,11
+128,Vegetarian Meals,2
+129,Fitness Accessories,24
+130,Leggings,55
+131,Frozen Vegetarian Meals,26
+132,Bedding & Linens,9
+133,Marinades,5
+134,Granola/Cereal,17
+135,Dips and Spreads,3
+136,Snacks,56
+137,Work Pants,57
+138,Blenders & Juicers,1
+139,Dairy Spreads,37
+140,Athletic Footwear,58
+141,Kits - Sushi,59
+142,Decorative Wall Art & Accessories,9
+143,Dog Toys,10
+144,Frozen Vegetables,26
+145,Hydration Gear,24
+146,Rubs and Seasonings,60
+147,Cooking Tools & Utensils,1
+148,Cheese Spreads,37
+149,Gourmet Salads,27
+150,Drones & Accessories,6
+151,Headwear,61
+152,Bird Feeding Accessories,4
+153,Sports Apparel,55
+154,Craft Supplies,32
+155,Gardening Tools,11
+156,Fishing Equipment,4
+157,Vegetable-Based Sauces,45
+158,Frozen Entrees,26
+159,Frozen Desserts,26
+160,Baking Kits,33
+161,Office Furniture,63
+162,Scarves,61
+163,Healthy Breakfast Options,17
+164,Vegetarian Soups,21
+165,Pasta & Rice Mixes,64
+166,Home Automation,23
+167,Pet Waste Management,10
+168,Home Appliances,9
+169,Tea,15
+170,Outdoor Cleaning,65
+171,Dog Accessories,10
+172,Kitchen Storage & Organization,1
+173,Pain Relief,12
+174,Ice Cream Flavors,66
+175,Salsas,5
+176,Frozen Appetizers,26
+177,Knitwear,31
+178,Robotics Toys,13
+179,Candle & Soap Making Supplies,32
+180,Plant-Based Yogurt,19
+181,Cameras & Photography,6
+182,Salads,2
+183,Canned Seafood,67
+184,Fresh Cut Vegetables,35
+185,Accessories,68
+186,Nut Butters,5
+187,Drinkware,1
+188,Deli Meats,69
+189,Safety Equipment,70
+190,Casual Footwear,58
+191,Frozen Asian Meals,71
+192,Hoodies,31
+193,Shirts,73
+194,Chocolate Desserts,74
+195,Floor Care Appliances,30
+196,Snow Sports,54
+197,Outerwear,31
+198,Noodles,28
+199,Herbal Tea,15
+200,Mustards,5
+201,Women's Dress Shoes,58
+202,Networking Equipment,6
+203,Sweet Snacks,3
+204,Exterior Sealers,65
+205,Oatmeal,48
+206,Women's Tops,73
+207,Frozen Italian Meal Kits,71
+208,Hand Tools,75
+209,Cleaning Supplies,6
+210,Safety and Emergency Supplies,51
+211,Portable Speakers,53
+212,Skincare,49
+213,Jumpsuits,77
+214,Guacamole,5
+215,Bicycles,79
+216,Laptop Accessories,7
+217,Chips and Crisps,3
+218,Bottoms,80
+219,Asian Sauces,45
+220,Health Devices,12
+221,Apples,81
+222,Frozen Fruits,26
+223,Health Monitoring Devices,24
+224,Computer Accessories,6
+225,Sparkling Beverages,15
+226,Smoked Seafood,67
+227,International Cuisine,2
+228,Canned Vegetables,14
+229,Marine Photography Equipment,18
+230,Seafood,14
+231,Printers & Scanners,52
+232,Herb-Based Sauces,45
+233,Healthy Desserts,74
+234,Home Fragrance & Accessories,9
+235,Home Security,23
+236,Office Supplies,52
+237,Miniature Sports Games,13
+238,Garden Tools,11
+239,Flavored Rice Dishes,22
+240,Art Supplies,13
+241,Marinades and Sauces,5
+242,Cat Care,10
+243,Frozen Baked Goods,8
+244,Italian Cuisine,22
+245,Prepared Seafood,67
+246,Meal Kits,2
+247,Massage Therapy,12
+248,Processed Meats,34
+249,Cardio Equipment,24
+250,Herbs,35
+251,Herbs and Spices,60
+252,Canned Legumes,14
+253,Building Toys,13
+254,Nuts,84
+255,Cookies,8
+256,Frozen Smoothies,26
+257,Legumes,85
+258,Fitness Monitors,86
+259,Olive Products,5
+260,Prepared Fruit,35
+261,Bags,7
+262,Garden Decor,11
+263,Hot Sauces,5
+264,Cooking Appliances,1
+265,Soups,88
+266,Asian Dishes,28
+267,Wallets,7
+268,Casual Dresses,29
+269,Dried Spices,60
+270,Desserts,89
+271,Sculpting Supplies,39
+272,Dress Shirts,91
+273,Sweaters,73
+274,Whole Grain Breads,92
+275,Jackets,31
+276,Footwear - Boots,93
+277,Shower Fixtures,94
+278,Herb Blends,60
+279,Frozen Snacks,26
+280,Office Accessories,52
+281,Yogurt,37
+282,Frozen Pizza Crusts,26
+283,Ready-to-Eat Salads,27
+284,Women's Footwear,58
+285,Mixes,33
+286,Outerwear - Faux Fur,96
+287,Bath & Body,49
+288,Poultry,25
+289,Herbs & Spices,35
+290,Salad Kits,27
+291,Boots,58
+292,Cuisine - Asian,59
+293,Infused Oils,98
+294,Berries,81
+295,Frozen Pasta Dishes,71
+296,Car Cleaning,51
+297,Prepared Poultry,34
+298,Cuisine - Italian,59
+299,Specialty Salts,5
+300,Seasonings & Mixes,44
+301,Natural Sweeteners,5
+302,Mexican Cuisine Meal Kits,64
+303,Eco-Friendly Home Products,9
+304,Syrups,5
+305,Sweeteners,33
+306,Golf,54
+307,Ready-to-Eat Meals,2
+308,Activewear,73
+309,Shower Accessories,94
+310,Painting Kits,39
+311,Rice Dishes,22
+312,Coconut Products,14
+313,Pastries,8
+314,smoothies,15
+315,Spreads,99
+316,Solar Power Accessories,6
+317,Creative Arts & Crafts,13
+318,Nuts and Seeds,3
+319,Fruits,35
+320,Flavored Nuts,84
+321,Arts & Crafts,100
+322,Outdoor Activity Toys,13
+323,Jewelry Storage,7
+324,Pet Health and Care,10
+325,Gluten-Free Baked Goods,8
+326,Painting Supplies,39
+327,Running Shorts,55
+328,Fitness & Nutrition,12
+329,Earbuds,53
+330,Self-Defense Tools,102
+331,Plant-Based Sauces,45
+332,Casual Pants,57
+333,Seasoning Mixes,103
+334,Children's Educational Books,100
+335,Smart Home & Security,9
+336,Meat Alternatives,85
+337,Inflation Equipment,4
+338,Garden Technology,11
+339,Nutrition & Fitness,12
+340,Vinaigrettes,104
+341,Puzzles,13
+342,Gaming Accessories,50
+343,Frozen Grain Bowls,71
+344,Eco-Friendly Toys,13
+345,Input Devices,68
+346,Pet Safety Gear,10
+347,Flavored Butters,5
+348,Potatoes,82
+349,Custom Accessories,7
+350,Feeding Accessories,70
+351,Drink Mixes,15
+352,Pain Relief & Therapy,12
+353,Vegetarian Salads,27
+354,Vegetable Purees,14
+355,Emergency Preparedness & First Aid,12
+356,Coffee Accessories,1
+357,Pickles,5
+358,Gourmet Snacks,3
+359,Fresh Vegetables,35
+360,Skirts,106
+361,Pork,34
+362,Tortilla Chips,3
+363,Supplements,107
+364,Instant Meals,59
+365,Food Preparation Tools,1
+366,Comfort Accessories,38
+367,Flavored Yogurt,37
+368,Red Meat,34
+369,Coffee,15
+370,Cutting Boards & Utensils,1
+371,Racquet Sports Equipment,24
+372,Pancakes & Waffles,17
+373,Japanese Cooking Kits,109
+374,Tanks & Sleeveless Tops,55
+375,Grain Blends,22
+376,Chewy Candies,110
+377,T-Shirts,73
+378,Seeds & Nuts,84
+379,Strength Training Equipment,24
+380,Couscous,22
+381,Outdoor Furniture,4
+382,Superfoods,111
+383,Sleep & Relaxation,12
+384,Jigsaw Puzzles,13
+385,Artisan Bread,8
+386,Dried Fruits,56
+387,Phone Accessories,51
+388,Savory Nuts,84
+389,Vegan Baked Goods,8
+390,Indoor Gardening Supplies,11
+391,Pet Feeding Supplies,10
+392,Italian Sauces,45
+393,Dinnerware,1
+394,Musical Toys,13
+395,Fruit Dips,112
+396,Pre-Packaged Produce Kits,35
+397,Hearing Protection,102
