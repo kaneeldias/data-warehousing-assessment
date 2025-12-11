@@ -5,48 +5,48 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-N0CSB19"
   DTS:CreatorName="DESKTOP-N0CSB19\User"
-  DTS:DTSID="{FA998FB2-8BB1-4038-A491-1D7FE671FC4E}"
+  DTS:DTSID="{19DF96E0-A5C3-4EA3-A8DE-3B653D056518}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1033"
-  DTS:ObjectName="azure-sql-copy"
+  DTS:ObjectName="azure-sql-copy-employees"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{CC795DB2-C1B4-4AD6-AE11-A1327AA696AD}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{3698CA6B-9086-4CCC-817D-8D6CE0E179C9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{FE00D484-20D5-4C98-8F5E-6B89956714B1}"
+      DTS:DTSID="{5C7166CB-A50C-4757-8BC9-D30E8B5EBD15}"
       DTS:ObjectName="127.0.0.1,1433.sa">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=127.0.0.1,1433;User ID=sa;Initial Catalog=olap;Provider=MSOLEDBSQL19.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-azure-sql-copy-{FE00D484-20D5-4C98-8F5E-6B89956714B1}127.0.0.1,1433.sa;Trust Server Certificate=True;">
+          DTS:ConnectionString="Data Source=127.0.0.1,1433;User ID=sa;Initial Catalog=employees;Provider=MSOLEDBSQL19.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-azure-sql-copy-{5C7166CB-A50C-4757-8BC9-D30E8B5EBD15}127.0.0.1,1433.sa;Trust Server Certificate=True;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACT/iYjFzy8lznHEAVIXs9QRX0qM3S4toohW4qjeTs+wQAAAAAOgAAAAAIAACAAAAC9F4ERTmEuISiMI8yQNKX1Y6zGlJ+Lvbgl5ARMkNPojyAAAAB/ED2IuT/JaAPH8EhqLSmsuf9GPZ6FAB6Ei3pf+hHBrUAAAACst17EtP3xHD/R//hWSSxXKGPG8ztBGmrMD2paK83hhHvkyxxOGxfPH0rN0AfBvlZhrQ5VBOFSyXdS4QXlfAQn</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAByRPFXjPslT2SD9Ikx9eFRaFtQqG7n0yLdfZjZRh3+UgAAAAAOgAAAAAIAACAAAACISkmRvG2xZ8VM/mxsZY/O5gK+z7pxU8NVeGhh66SgUCAAAAAvB+A/zbCVcdqJkY9C1duujPNFz1xtYN/Tzhx+So6euEAAAADItdVqEyEkZK3vgu1IVkUhvlmCAlB70D2CNYWbn2xs0S+GK8QOBf/lOnGEHMgc1WH+JdaWLzNviqJk/kmY/cst</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[msc-bda-datawarehousing.database.windows.net,1433.test-db.kaneel]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{F3392722-0A33-449D-BB1E-8FDB17FA024C}"
+      DTS:DTSID="{1434142E-C693-49C2-A782-DA59B2FC7068}"
       DTS:ObjectName="msc-bda-datawarehousing.database.windows.net,1433.test-db.kaneel">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=msc-bda-datawarehousing.database.windows.net,1433;User ID=kaneel;Initial Catalog=test-db;Provider=MSOLEDBSQL19.1;Application Name=SSIS-azure-sql-copy-{F3392722-0A33-449D-BB1E-8FDB17FA024C}msc-bda-datawarehousing.database.windows.net,1433.test-db.kaneel;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=msc-bda-datawarehousing.database.windows.net,1433;User ID=kaneel;Initial Catalog=test-db;Provider=MSOLEDBSQL19.1;Application Name=SSIS-azure-sql-copy-{1434142E-C693-49C2-A782-DA59B2FC7068}msc-bda-datawarehousing.database.windows.net,1433.test-db.kaneel;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABcPe8xqdUlq/qScTgkJOzOwDu13R5WSEWs+ce0jeRHMwAAAAAOgAAAAAIAACAAAAANvoRMy28EOwh1bpAAKVI/Zm9CWmgUpzVTuyuzvcJz1iAAAAAmcgFDFQZ1n3LwgpRgejsxmL9wraCgd6lE98XdYgoSjkAAAABar+cLmYHOsAqVRdduDtFwh/dkOh0REoUJi0gi1/kxSLHE/RurODAYAXZ/MIiuRdp/SNsqmKnjTB0MSGjxpOZ5</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADhIi8+dMp02tgi66S9ak5QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD9StcAySJSePuZB6/GfRxAAa6/zcyMt30xKFRrBaqYEQAAAAAOgAAAAAIAACAAAAA8FoiIelm00pi/qFgeyPQgPNc5EFGPM3sZDYxezxccySAAAABgJO1XjqzenydhjyM9bXqQuUyoFA+I0zQqitAa+YJhVEAAAABiz8IWsmEqaMxNieClR+0ufM6DmXjizvm5T279RYFWb4EvP+KKD5zFkHhmyTaaid6GczEG56iVmM7k9AK64Ue9</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -54,13 +54,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Copy Dim_Product"
+      DTS:refId="Package\Copy Employees"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{E3247567-0EE7-4F18-8851-3E786A7113F8}"
+      DTS:DTSID="{027D7A4D-4D8E-4C9C-8EC3-C50A5B96B850}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Copy Dim_Product"
+      DTS:ObjectName="Copy Employees"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -68,11 +68,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Copy Dim_Product\Azure Dim_Product"
+              refId="Package\Copy Employees\Azure Employees"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Azure Dim_Product"
+              name="Azure Employees"
               usesDispositions="true"
               version="4">
               <properties>
@@ -83,7 +83,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Dim_Product]</property>
+                  name="OpenRowset">[dbo].[Employee]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -113,11 +113,11 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  name="FastLoadKeepNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">TABLOCK</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -125,7 +125,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Copy Dim_Product\Azure Dim_Product.Connections[OleDbConnection]"
+                  refId="Package\Copy Employees\Azure Employees.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[msc-bda-datawarehousing.database.windows.net,1433.test-db.kaneel]"
                   connectionManagerRefId="Package.ConnectionManagers[msc-bda-datawarehousing.database.windows.net,1433.test-db.kaneel]"
                   description="The OLE DB runtime connection used to access the database."
@@ -133,74 +133,70 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input]"
+                  refId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      refId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].Columns[employee_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="employee_name"
+                      externalMetadataColumnId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].ExternalColumns[employee_name]"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[employee_name]" />
+                    <inputColumn
+                      refId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].Columns[manager_id]"
                       cachedDataType="i4"
-                      cachedName="product_id"
-                      externalMetadataColumnId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[product_id]" />
+                      cachedName="manager_id"
+                      externalMetadataColumnId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].ExternalColumns[manager_id]"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[manager_id]" />
                     <inputColumn
-                      refId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].Columns[name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="name"
-                      externalMetadataColumnId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[name]"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[name]" />
-                    <inputColumn
-                      refId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].Columns[category]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="category"
-                      externalMetadataColumnId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[category]"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[category]" />
+                      refId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].Columns[employee_id]"
+                      cachedDataType="i4"
+                      cachedName="employee_id"
+                      externalMetadataColumnId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[employee_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      refId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
                       dataType="i4"
-                      name="product_id" />
+                      name="employee_id" />
                     <externalMetadataColumn
-                      refId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      refId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].ExternalColumns[employee_name]"
                       codePage="1252"
                       dataType="str"
                       length="100"
-                      name="name" />
+                      name="employee_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[category]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="category" />
+                      refId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input].ExternalColumns[manager_id]"
+                      dataType="i4"
+                      name="manager_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Copy Dim_Product\Azure Dim_Product.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Copy Employees\Azure Employees.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Azure Dim_Product.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Copy Employees\Azure Employees.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Copy Dim_Product\Azure Dim_Product.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Copy Employees\Azure Employees.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Azure Dim_Product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Copy Employees\Azure Employees.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Copy Dim_Product\Azure Dim_Product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Copy Employees\Azure Employees.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -209,11 +205,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Copy Dim_Product\Local Dim_Product"
+              refId="Package\Copy Employees\Local Employees"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Local Dim_Product"
+              name="Local Employees"
               usesDispositions="true"
               version="7">
               <properties>
@@ -224,7 +220,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Dim_Product]</property>
+                  name="OpenRowset">[dbo].[Employee]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -258,7 +254,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Copy Dim_Product\Local Dim_Product.Connections[OleDbConnection]"
+                  refId="Package\Copy Employees\Local Employees.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[127.0.0.1,1433.sa]"
                   connectionManagerRefId="Package.ConnectionManagers[127.0.0.1,1433.sa]"
                   description="The OLE DB runtime connection used to access the database."
@@ -266,95 +262,89 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output]"
+                  refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[product_id]"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[employee_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[product_id]"
-                      name="product_id"
+                      externalMetadataColumnId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      name="employee_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[name]"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[employee_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      externalMetadataColumnId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].ExternalColumns[employee_name]"
                       length="100"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[name]"
-                      name="name"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[employee_name]"
+                      name="employee_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[category]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[manager_id]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].ExternalColumns[category]"
-                      length="100"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].Columns[category]"
-                      name="category"
+                      externalMetadataColumnId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].ExternalColumns[manager_id]"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].Columns[manager_id]"
+                      name="manager_id"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
                       dataType="i4"
-                      name="product_id" />
+                      name="employee_id" />
                     <externalMetadataColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].ExternalColumns[employee_name]"
                       codePage="1252"
                       dataType="str"
                       length="100"
-                      name="name" />
+                      name="employee_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output].ExternalColumns[category]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="category" />
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output].ExternalColumns[manager_id]"
+                      dataType="i4"
+                      name="manager_id" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[employee_id]"
                       dataType="i4"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[product_id]"
-                      name="product_id" />
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      name="employee_id" />
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[name]"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[employee_name]"
                       codePage="1252"
                       dataType="str"
                       length="100"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[name]"
-                      name="name" />
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[employee_name]"
+                      name="employee_name" />
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[category]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[category]"
-                      name="category" />
-                    <outputColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[manager_id]"
                       dataType="i4"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[manager_id]"
+                      name="manager_id" />
+                    <outputColumn
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -365,10 +355,10 @@
           </components>
           <paths>
             <path
-              refId="Package\Copy Dim_Product.Paths[OLE DB Source Output]"
-              endId="Package\Copy Dim_Product\Azure Dim_Product.Inputs[OLE DB Destination Input]"
+              refId="Package\Copy Employees.Paths[OLE DB Source Output]"
+              endId="Package\Copy Employees\Azure Employees.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Copy Dim_Product\Local Dim_Product.Outputs[OLE DB Source Output]" />
+              startId="Package\Copy Employees\Local Employees.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -387,39 +377,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="169.333333333334,42.6666666666667"
-          Id="Package\Copy Dim_Product"
+          Size="160,42.6666666666667"
+          Id="Package\Copy Employees"
           TopLeft="273.749987762422,227.157892242693" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Copy Dim_Product">
+    design-time-name="Package\Copy Employees">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.333333333334,42.6666666666667"
-          Id="Package\Copy Dim_Product\Local Dim_Product"
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Copy Employees\Local Employees"
           TopLeft="393.124982425944,305.842101905072" />
         <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Copy Dim_Product\Azure Dim_Product"
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Copy Employees\Azure Employees"
           TopLeft="388.124982649461,439.947363590518" />
         <EdgeLayout
-          Id="Package\Copy Dim_Product.Paths[OLE DB Source Output]"
-          TopLeft="475.958315871036,348.508768571739">
+          Id="Package\Copy Employees.Paths[OLE DB Source Output]"
+          TopLeft="471.624982537703,348.508768571739">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,91.4385950187789"
+              EndConnector="0,91.4385950187793"
               Start="0,0"
-              End="0,83.9385950187789">
+              End="0,83.9385950187793">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,83.9385950187789" />
+                    End="0,83.9385950187793" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -432,7 +422,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Copy Dim_Product\Local Dim_Product">
+    design-time-name="Package\Copy Employees\Azure Employees">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -445,7 +435,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Copy Dim_Product\Azure Dim_Product">
+    design-time-name="Package\Copy Employees\Local Employees">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
