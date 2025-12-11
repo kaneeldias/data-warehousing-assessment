@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>Data Warehousing SSIS</Name>
-    <LastWriteTime>2025-12-06T06:21:02.5929532Z</LastWriteTime>
+    <LastWriteTime>2025-12-11T05:16:48.9001743Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -28,7 +28,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>scd-type-3.dtsx</Name>
-      <LastWriteTime>2025-12-06T06:27:17.0510846Z</LastWriteTime>
+      <LastWriteTime>2025-12-06T06:35:58.3681898Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>azure-sql-copy.dtsx</Name>
+      <LastWriteTime>2025-12-11T05:16:48.8334213Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
