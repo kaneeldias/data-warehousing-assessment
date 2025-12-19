@@ -44,8 +44,29 @@ services:
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/materialized_views.sql; \
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/hierarchy.sql; \
         /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/employees.sql; \
+        /opt/mssql-tools/bin/sqlcmd -S mssql-server -U sa -P "$${SA_PASSWORD}" -i /usr/config/indexes.sql; \
     restart: "no"
+
+  oracle-db-server:
+    image: container-registry.oracle.com/database/enterprise:21.3.0.0
+    container_name: oracle_db_server
+    environment:
+      ORACLE_PWD: "test123"
+    ports:
+      - "1521:1521"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - ./data:/opt/oracle/import/data:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'SELECT 1 FROM dual;' | sqlplus -s system/$${ORACLE_PASSWORD}@localhost:1521/orclpdb1 | grep -q 1 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
 
 volumes:
   mssql-data:
+    driver: local
+  oracle-data:
     driver: local
